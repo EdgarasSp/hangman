@@ -1,4 +1,4 @@
-1<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -8,13 +8,102 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 <link rel="stylesheet" href="assets/css/style.css">
-<title>Hangman MS2</title>
+<title>Hangman Game</title>
 </head>
 <body>
-    <h1>Test</h1>
+    <div id="main-container">
+        <div id="game-type"> <!-- Insert through JS once page load-->
+            <h1>HANGMAN</h1>
+            <div class="card">
+                <h2>EASY</h2>
+                <ul>
+                    <li>a</li>
+                    <li>b</li>
+                    <li>c</li>
+                </ul>
+                <button id="btn-easy" class="play">PLAY</button>
+            </div>
+            <div class="card">
+                <h2>Medium</h2>
+                <ul>
+                    <li>a</li>
+                    <li>b</li>
+                    <li>c</li>
+                </ul>
+                <button id="btn-hard" class="play">PLAY</button>
+            </div>
+            <div class="card">
+                <h2>Hard</h2>
+                <ul>
+                    <li>a</li>
+                    <li>b</li>
+                    <li>c</li>
+                </ul>
+                <button id="btn-hard" class="play">PLAY</button>
+            </div>
+        </div>
+        <div id="game-area">
+            <div id="game-status">
+                <div id="score"></div>
+                <div id="timer"></div>
+                <div id="game-selected"></div>
+            </div>
+            <div id="lives-status">
+                <ul>
+                    <li class="live"></li> <!-- use index to color (maybe use array to build x 10 list items)-->
+                <!--<li class="live"></li>
+                    <li class="live"></li>
+                    <li class="live"></li>
+                    <li class="live"></li>
+                    <li class="live"></li>
+                    <li class="live"></li>
+                    <li class="live"></li>
+                    <li class="live"></li>
+                    <li class="live"></li> -->
+                </ul>
+            </div>
+            <div id="word-guess"></div>
+            <div id="word-random">
+                <button id="random"></button>
+            </div>
+            <div id="keyboard">
+                <div class="keys"></div> <!-- use index to color (maybe use array to build x 26 buttons)-->
+            <!--<div class="keys"></div>
+                <div class="keys"></div>
+                <div class="keys"></div>
+                <div class="keys"></div>
+                <div class="keys"></div>
+                <div class="keys"></div>
+                <div class="keys"></div>
+                <div class="keys"></div>
+                <div class="keys"></div>
+                <div class="keys"></div>
+                <div class="keys"></div>
+                <div class="keys"></div>
+                <div class="keys"></div>
+                <div class="keys"></div>
+                <div class="keys"></div>
+                <div class="keys"></div>
+                <div class="keys"></div>
+                <div class="keys"></div>
+                <div class="keys"></div>
+                <div class="keys"></div>
+                <div class="keys"></div>
+                <div class="keys"></div>
+                <div class="keys"></div>
+                <div class="keys"></div>
+                <div class="keys"></div> -->
+            </div>
+            <div id="action-status">
+                <p id="action"></p>
+            </div>
+        </div>
+    </div>
 
 
-    <script src="assets/js/script.js"></script>
+
+
+<script src="assets/js/script.js"></script>
 <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>-->
 
