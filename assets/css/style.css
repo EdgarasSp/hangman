@@ -3,6 +3,7 @@ h1 {
     text-align: center;
 }
 
+/* fixed game window parameters */
 
 #main-container {
     border: 1px solid black;
@@ -13,15 +14,14 @@ h1 {
     top: 50%;
     -webkit-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
-    
 }
+
+/* Menu */
 
 #game-type {
     display:flex;
     flex-direction: row;
-    justify-content: space-evenly;
-   
-
+    justify-content: space-evenly;  
 }
 
 .cards {
@@ -42,4 +42,13 @@ h1 {
 .play {
     margin:auto;
     display:block;
+}
+
+/* Game */
+
+#game-status {
+    display:flex;
+    flex-direction: row;
+    justify-content: space-evenly; 
+    margin-top: 20px;
 }
