@@ -1,3 +1,45 @@
 h1 {
     color: blue;
+    text-align: center;
+}
+
+
+#main-container {
+    border: 1px solid black;
+    position:absolute;
+    width:600px;
+    height: 400px;
+    left: 50%;
+    top: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    
+}
+
+#game-type {
+    display:flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+   
+
+}
+
+.cards {
+    border: 1px solid blue;
+    width:170px;
+    height: 300px;
+}
+
+.cards h2 {
+    text-align: center;
+    margin: 20% 0;
+}
+
+.cards ul {
+    height: 40%;
+}
+
+.play {
+    margin:auto;
+    display:block;
 }

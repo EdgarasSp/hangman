@@ -12,34 +12,35 @@
 </head>
 <body>
     <div id="main-container">
+        <h1>HANGMAN</h1>
         <div id="game-type"> <!-- Insert through JS once page load-->
-            <h1>HANGMAN</h1>
-            <div class="card">
+            
+            <div class="cards">
                 <h2>EASY</h2>
                 <ul>
                     <li>a</li>
                     <li>b</li>
                     <li>c</li>
                 </ul>
-                <button id="btn-easy" class="play">PLAY</button>
+                <button id="btn-easy" class="play" onclick="location.href='./game.html'">PLAY</button>
             </div>
-            <div class="card">
-                <h2>Medium</h2>
+            <div class="cards">
+                <h2>MEDIUM</h2>
                 <ul>
                     <li>a</li>
                     <li>b</li>
                     <li>c</li>
                 </ul>
-                <button id="btn-hard" class="play">PLAY</button>
+                <button id="btn-medium" class="play" onclick="location.href='./game.html'">PLAY</button>
             </div>
-            <div class="card">
-                <h2>Hard</h2>
+            <div class="cards">
+                <h2>HARD</h2>
                 <ul>
                     <li>a</li>
                     <li>b</li>
                     <li>c</li>
                 </ul>
-                <button id="btn-hard" class="play">PLAY</button>
+                <button id="btn-hard" class="play" onclick="location.href='./game.html'">PLAY</button>
             </div>
         </div>
     </div>
