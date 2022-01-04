@@ -46,9 +46,43 @@ h1 {
 
 /* Game */
 
+/* Info-bar */
+
 #game-status {
     display:flex;
     flex-direction: row;
-    justify-content: space-evenly; 
-    margin-top: 20px;
+    justify-content: space-between; 
+    padding: 1.5rem;
+    border: red 1px solid;
+}
+
+#game-status p {
+    margin: 0;
+}
+
+/* Lives-bar */
+
+#lives-status {
+    display:flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: auto;
+    padding: 1rem;
+    width: 400px;
+    border: blue 1px solid;
+}
+
+ul {
+    list-style-type: none;
+    display:flex;
+    flex-direction: row;
+    padding: 0;
+    margin: 0;
+}
+
+li {
+    justify-content: space-between;
+    color: green;
+    margin: 0 1rem;
+    font-size: 2rem;   
 }
