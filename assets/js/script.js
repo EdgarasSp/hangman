@@ -19,6 +19,16 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 })
 
+document.addEventListener("DOMContentLoaded", function() {
+    let keyboard = document.getElementsByClassName("keys");
+
+    for (let keys of keyboard) {
+        keys.addEventListener("click", function() {
+            let keyPressed = this.getAttribute("data-type");
+            alert(`Key: ${keyPressed} Pressed`);
+        })
+    }
+})
 
 // declare var
 
@@ -69,4 +79,4 @@ document.addEventListener("DOMContentLoaded", function() {
 //     function resetGame () {}
 
 
-// function gameEnd () {]
+// function gameEnd () {}
