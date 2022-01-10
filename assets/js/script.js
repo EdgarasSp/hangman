@@ -1,4 +1,17 @@
 console.log("connected...");
+// Event Listener for DOM
+
+document.addEventListener("DOMContentLoaded", function() {
+    let buttons = document.getElementsByTagName("button");
+
+    for (let button of buttons) {
+        button.addEventListener("click", function() {
+            let gameType = this.getAttribute("data-type");
+            alert(`Game Mode ${gameType} Selected`); //Shows Selected game mode Type
+        })
+    }
+})
+
 
 // declare var
 
@@ -11,41 +24,42 @@ console.log("connected...");
 
 // create html game-area based on game type
 
-function runGame (gameType){}
 
-function displayHtml (){}
+// function runGame (gameType){}
 
-function randomWord (){}
-    function displayEasyWord () {}
-    function displayMediumWord () {}
-    function displayHardWord () {}
+// function displayHtml (){}
 
-function randomLetter (){}
-    function displayRandomLetter () {}
+// function randomWord (){}
+//     function displayEasyWord () {}
+//     function displayMediumWord () {}
+//     function displayHardWord () {}
 
-function checkAnswer () {}
+// function randomLetter (){}
+//     function displayRandomLetter () {}
 
-function timerMedium (){}
-    function checkTimeOk () {}
-    function checkTimeLost () {}
+// function checkAnswer () {}
 
-function timerHard () {}
-    function checkTimeOk () {}
-    function checkTimeLost () {}
+// function timerMedium (){}
+//     function checkTimeOk () {}
+//     function checkTimeLost () {}
 
-function livesTracker () {}
-    function checkGameWon () {}
-    function checkGameLost () {}
+// function timerHard () {}
+//     function checkTimeOk () {}
+//     function checkTimeLost () {}
 
-function scoreTracker () {}
-    function incrementCorrectScore(){}
-    function incrementIncorrectScore(){}
+// function livesTracker () {}
+//     function checkGameWon () {}
+//     function checkGameLost () {}
 
-
-function actionTracker () {}
-
-function gameContinue () {}
-    function resetGame () {}
+// function scoreTracker () {}
+//     function incrementCorrectScore(){}
+//     function incrementIncorrectScore(){}
 
 
-function gameEnd () {}
+// function actionTracker () {}
+
+// function gameContinue () {}
+//     function resetGame () {}
+
+
+// function gameEnd () {]
