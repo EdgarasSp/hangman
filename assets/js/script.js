@@ -25,6 +25,10 @@ document.addEventListener("DOMContentLoaded", function() {
 // Retrieves from memory selected game type from index.html
 let gameType = localStorage.getItem("gameSelection");
 let word = "";
+let guessed = [];
+let guessState = null;
+
+console.log(guessState);
 
 
 // get elements
@@ -41,6 +45,7 @@ function generateButtons() {
         <div
           class="keys"
           data-type='` + letter + `'
+          onClick="checkGuess('` + letter + `');"
           >
         <a>  ` + letter + ` </a>
         </div>
@@ -51,37 +56,47 @@ function generateButtons() {
 
 
 function runGame (gameType){
-  randomWord();    
+  randomWord();
+  guess();
 }
 
-
-
+// Generates random word based on variables and selected game type
 function randomWord() {
-  var easyWordsList = ["bleach","hacked","labels","belief","Cream","Guide","Uncle","Rural","Sixth","Wrong"]
-  var mediumWordsList = ["Anxious","Chicken","Exclude","Unknown","oblivion","yearbook","umbrella","tampered","readying","pedantic"]
-  var hardWordsList = ["Chickenpox","Friendship","Quicksteps","Backpacker","vaccinations","quarterbacks","taskmistress","pagination","jalapenos","waistband"]
+  var easyWordsList = ["bleach","hacked","labels","belief","cream","guide","uncle","rural","sixth","wrong"]
+  var mediumWordsList = ["anxious","chicken","exclude","unknown","oblivion","yearbook","umbrella","tampered","readying","pedantic"]
+  var hardWordsList = ["chickenpox","friendship","quicksteps","backpacker","vaccinations","quarterbacks","taskmistress","pagination","jalapenos","waistband"]
 
   if (gameType === "easy") {
       word = easyWordsList[Math.floor(Math.random() * easyWordsList.length)];
-      document.getElementById('word-random').innerHTML = word;
-      console.log(word);
+       console.log(word);
   } else if (gameType === "medium") {
       word = mediumWordsList[Math.floor(Math.random() * mediumWordsList.length)];
-      document.getElementById('word-random').innerHTML = word;
       console.log(word);
   } else if (gameType === "hard") {
       word = hardWordsList[Math.floor(Math.random() * hardWordsList.length)];
-      document.getElementById('word-random').innerHTML = word;
       console.log(word);
   } else {
     console.log(`unknown game type`);
   }
 }
-  
-    
-//     function displayMediumWord () {}
-//     function displayHardWord () {}
 
+function checkGuess(chosenLetter) {
+  guessed.indexOf(chosenLetter) === -1 ? guessed.push(chosenLetter) : null;
+  // document.getElementById(chosenLetter).setAttribute('disabled', true);
+
+  if (word.indexOf(chosenLetter) >= 0) {
+    guess();
+    console.log(`first line - correct letter guess`);
+  } else if (word.indexOf(chosenLetter) === -1) {
+    console.log(`second line - wrong letter guess`);
+  }
+}
+
+function guess() {
+  guessState = word.split('').map(letter => (guessed.indexOf(letter) >= 0 ? letter : " _ ")).join('');
+
+  document.getElementById('word-random').innerHTML = guessState;
+}
 // function randomLetter (){}
 //     function displayRandomLetter () {}
 
