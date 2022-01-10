@@ -32,12 +32,11 @@ document.addEventListener("DOMContentLoaded", function() {
 
 // declare var
 
+var easyWords = ["bleach","hacked","labels","belief","Cream","Guide","Uncle","Rural","Sixth","Wrong"]
+var mediumWords = ["Anxious","Chicken","Exclude","Unknown","oblivion","yearbook","umbrella","tampered","readying","pedantic"]
+var hardWords = ["Chickenpox","Friendship","Quicksteps","Backpacker","vaccinations","quarterbacks","taskmistress","pagination","jalapenos","waistband"]
 
 // get elements
-
-
-// create html game-type cards
-
 
 // create html game-area based on game type
 
@@ -60,7 +59,7 @@ function generateButtons() {
 
 // function displayHtml (){}
 
-// function randomWord (){}
+function randomWord (){}
 //     function displayEasyWord () {}
 //     function displayMediumWord () {}
 //     function displayHardWord () {}
