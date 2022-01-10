@@ -15,7 +15,7 @@ document.addEventListener("DOMContentLoaded", function() {
     for (let keys of keyboard) {
         keys.addEventListener("click", function() {
             let keyPressed = this.getAttribute("data-type");
-            alert(`Key: ${keyPressed} Pressed`);
+            // alert(`Key: ${keyPressed} Pressed`);
         })
     }
 });
@@ -28,7 +28,7 @@ let word = "";
 let guessed = [];
 let guessState = null;
 
-console.log(guessState);
+
 
 
 // get elements
@@ -44,8 +44,9 @@ function generateButtons() {
       `
         <div
           class="keys"
+          id='` + letter + `'
           data-type='` + letter + `'
-          onClick="checkGuess('` + letter + `');"
+          onClick="checkGuess('` + letter + `')"
           >
         <a>  ` + letter + ` </a>
         </div>
@@ -82,15 +83,21 @@ function randomWord() {
 
 function checkGuess(chosenLetter) {
   guessed.indexOf(chosenLetter) === -1 ? guessed.push(chosenLetter) : null;
-  // document.getElementById(chosenLetter).setAttribute('disabled', true);
-
+  document.getElementById(chosenLetter).style.pointerEvents = 'none';
+  document.getElementById(chosenLetter).childNodes[1].style.color = '#FBFCFC';
+  document.getElementById(chosenLetter).childNodes[1].style.fontSize = '12px';
+ 
   if (word.indexOf(chosenLetter) >= 0) {
     guess();
+    document.getElementById(chosenLetter).style.backgroundColor = '#7DCEA0';
     console.log(`first line - correct letter guess`);
   } else if (word.indexOf(chosenLetter) === -1) {
+    document.getElementById(chosenLetter).style.backgroundColor = '#F1948A';
     console.log(`second line - wrong letter guess`);
   }
 }
+
+console.log(guessed);
 
 function guess() {
   guessState = word.split('').map(letter => (guessed.indexOf(letter) >= 0 ? letter : " _ ")).join('');

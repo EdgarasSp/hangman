@@ -164,8 +164,8 @@ li {
     width: 100%;
     height: 100%;
     text-decoration: none;
- 
-}
+    color:rgb(68, 66, 66);
+ }
 
 .keys:active{
     box-shadow: 
@@ -182,6 +182,13 @@ li {
         transform 0.08s ease,
         background-color 0.08s ease,
         box-shadow 0.08s ease;
+}
+
+.disable-key {
+    box-shadow: 
+        inset 2px 3px 0px #818181,
+        inset 1px 1px 1px 0px #fff,
+        1px 1px 1px 0px #7a7a7a;
 }
 /* Random Letter Generator */
 
