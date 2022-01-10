@@ -41,6 +41,20 @@ document.addEventListener("DOMContentLoaded", function() {
 
 // create html game-area based on game type
 
+function generateButtons() {
+    let buttonsHTML = 'abcdefghijklmnopqrstuvwxyz'.split('').map(letter =>
+      `
+        <div
+          class="keys"
+          data-type='` + letter + `'
+          >
+        <a>  ` + letter + ` </a>
+        </div>
+      `).join('');
+  
+    document.getElementById('keyboard').innerHTML = buttonsHTML;
+  }
+
 
 // function runGame (gameType){}
 
@@ -80,3 +94,5 @@ document.addEventListener("DOMContentLoaded", function() {
 
 
 // function gameEnd () {}
+
+generateButtons();
