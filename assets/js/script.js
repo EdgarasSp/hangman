@@ -6,8 +6,15 @@ document.addEventListener("DOMContentLoaded", function() {
 
     for (let button of buttons) {
         button.addEventListener("click", function() {
-            let gameType = this.getAttribute("data-type");
-            alert(`Game Mode ${gameType} Selected`); //Shows Selected game mode Type
+            // checks if on main page to identify the game type selected
+            if (document.URL.includes("index.html")) {
+                let gameType = this.getAttribute("data-type");
+                alert(`Game Mode ${gameType} Selected`); //Shows Selected game mode Type
+           } else {
+            //checks if generate button pressed
+                let randomLetter = this.getAttribute("data-type");
+                alert(`Generate Button Pressed`);
+           }
         })
     }
 })
