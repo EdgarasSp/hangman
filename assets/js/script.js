@@ -1,30 +1,13 @@
-console.log("connected...");
 // Event Listener for DOM
 
-// document.addEventListener("DOMContentLoaded", function() {
-//     let buttons = document.getElementsByTagName("button");
-
-//     for (let button of buttons) {
-//         button.addEventListener("click", function() {
-//             // checks if on main page to identify the game type selected
-//             if (document.URL.includes("index.html")) {
-//                 let gameType = this.getAttribute("data-type");
-//                 console.log(gameType);
-//                 alert(`Game Mode ${gameType} Selected`); //Shows Selected game mode Type
-                
-//             } else {
-//             //checks if generate button pressed
-//                 let randomLetter = this.getAttribute("data-type");
-//                 alert(`Generate Button Pressed`);
-//            }
-//         })
-//     }
-// });
-
-let gameType = localStorage.getItem("gameSelection");
-console.log(gameType)
-
-
+document.addEventListener("DOMContentLoaded", function() {
+  if (document.URL.includes("game.html")) {
+    generateButtons();  
+    runGame();
+  } else {
+    return;
+  }
+});
 
 document.addEventListener("DOMContentLoaded", function() {
     let keyboard = document.getElementsByClassName("keys");
@@ -39,6 +22,8 @@ document.addEventListener("DOMContentLoaded", function() {
 
 // declare var
 
+// Retrieves from memory selected game type from index.html
+let gameType = localStorage.getItem("gameSelection");
 let word = "";
 
 
@@ -62,25 +47,38 @@ function generateButtons() {
       `).join('');
 
     document.getElementById('keyboard').innerHTML = buttonsHTML;
+};
+
+
+function runGame (gameType){
+  randomWord();    
 }
 
 
-// function runGame (gameType){}
-//     var easyWordsList = ["bleach","hacked","labels","belief","Cream","Guide","Uncle","Rural","Sixth","Wrong"]
-//     var mediumWordsList = ["Anxious","Chicken","Exclude","Unknown","oblivion","yearbook","umbrella","tampered","readying","pedantic"]
-//     var hardWordsList = ["Chickenpox","Friendship","Quicksteps","Backpacker","vaccinations","quarterbacks","taskmistress","pagination","jalapenos","waistband"]
 
-//     if (gameType === "easy") {
+function randomWord() {
+  var easyWordsList = ["bleach","hacked","labels","belief","Cream","Guide","Uncle","Rural","Sixth","Wrong"]
+  var mediumWordsList = ["Anxious","Chicken","Exclude","Unknown","oblivion","yearbook","umbrella","tampered","readying","pedantic"]
+  var hardWordsList = ["Chickenpox","Friendship","Quicksteps","Backpacker","vaccinations","quarterbacks","taskmistress","pagination","jalapenos","waistband"]
 
-//     }
-
-//     function displayEasyWord () {}
-
-
-// function randomWord() {
-//     word = easyWordsList[Math.floor(Math.random() * easyWordsList.length)];
-//     console.log(word);
-//   }
+  if (gameType === "easy") {
+      word = easyWordsList[Math.floor(Math.random() * easyWordsList.length)];
+      document.getElementById('word-random').innerHTML = word;
+      console.log(word);
+  } else if (gameType === "medium") {
+      word = mediumWordsList[Math.floor(Math.random() * mediumWordsList.length)];
+      document.getElementById('word-random').innerHTML = word;
+      console.log(word);
+  } else if (gameType === "hard") {
+      word = hardWordsList[Math.floor(Math.random() * hardWordsList.length)];
+      document.getElementById('word-random').innerHTML = word;
+      console.log(word);
+  } else {
+    console.log(`unknown game type`);
+  }
+}
+  
+    
 //     function displayMediumWord () {}
 //     function displayHardWord () {}
 
@@ -114,5 +112,5 @@ function generateButtons() {
 
 // function gameEnd () {}
 
-generateButtons();
+// generateButtons();
 // randomWord();
