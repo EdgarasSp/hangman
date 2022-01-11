@@ -11,7 +11,7 @@ body {
 /* fixed game window parameters */
 
 #main-container {
-    background-color: #f4b41a;
+    background-color: #e0c0db;
     border: 1px solid black;
     border-radius: 3rem;
     position:absolute;
@@ -38,7 +38,7 @@ body {
     height: 350px;
     border-radius: 2rem;
     background-color:#f7f7f7;
-
+    
 }
 
 .cards h2 {
@@ -67,6 +67,9 @@ body {
     /* border: red 1px solid; */
 }
 
+#info-difficulty {
+    text-transform: uppercase;
+}
 #game-status p, #word-guess p {
     margin: 0;
 }
@@ -106,12 +109,13 @@ li {
     text-transform: uppercase;
     letter-spacing: 1rem;
     height: 8rem;
-    /* border: brown 1px solid; */
+
 }
 
 #word-random {
     font-size: 3rem;
-    padding: 2rem;
+    /* padding: 2rem; */
+    
 }
 
 /* Keyboard*/
@@ -137,9 +141,9 @@ li {
     color: #3a3a3a;
     background-color: #f7f7f7;
     box-shadow: 
-        inset 0 -2px 0 #818181,
+        inset 0 -2px 0 #4d4c4c,
         inset 0px 1px 1px -1px #fff,
-        2px 1px 1px 0px #7a7a7a;
+        2px 1px 1px 0px #4d4c4c;
     border-radius: 3px;
     text-transform: uppercase;
     white-space: nowrap;

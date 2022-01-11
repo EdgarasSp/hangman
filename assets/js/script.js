@@ -30,12 +30,6 @@ let guessState = null;
 
 
 
-
-// get elements
-
-// create html game-area based on game type
-
-
 // Generates on screen lives TBC
 
 // Generates on screen Keyboard
@@ -55,10 +49,15 @@ function generateButtons() {
     document.getElementById('keyboard').innerHTML = buttonsHTML;
 };
 
+// Update HTML info-bar
+function difficulty () {
+  document.getElementById('info-difficulty').innerHTML = gameType;
+}
 
 function runGame (gameType){
   randomWord();
   guess();
+  difficulty ()
 }
 
 // Generates random word based on variables and selected game type
@@ -69,22 +68,20 @@ function randomWord() {
 
   if (gameType === "easy") {
       word = easyWordsList[Math.floor(Math.random() * easyWordsList.length)];
-       console.log(word);
   } else if (gameType === "medium") {
       word = mediumWordsList[Math.floor(Math.random() * mediumWordsList.length)];
-      console.log(word);
   } else if (gameType === "hard") {
       word = hardWordsList[Math.floor(Math.random() * hardWordsList.length)];
-      console.log(word);
   } else {
     console.log(`unknown game type`);
   }
+  console.log(word);
 }
 
 function checkGuess(chosenLetter) {
   guessed.indexOf(chosenLetter) === -1 ? guessed.push(chosenLetter) : null;
   document.getElementById(chosenLetter).style.pointerEvents = 'none';
-  document.getElementById(chosenLetter).childNodes[1].style.color = '#FBFCFC';
+  document.getElementById(chosenLetter).childNodes[1].style.color = '#2E4053';
   document.getElementById(chosenLetter).childNodes[1].style.fontSize = '12px';
  
   if (word.indexOf(chosenLetter) >= 0) {
@@ -92,7 +89,7 @@ function checkGuess(chosenLetter) {
     document.getElementById(chosenLetter).style.backgroundColor = '#7DCEA0';
     console.log(`first line - correct letter guess`);
   } else if (word.indexOf(chosenLetter) === -1) {
-    document.getElementById(chosenLetter).style.backgroundColor = '#F1948A';
+    document.getElementById(chosenLetter).style.backgroundColor = '#ad8ba8';
     console.log(`second line - wrong letter guess`);
   }
 }
@@ -134,5 +131,3 @@ function guess() {
 
 // function gameEnd () {}
 
-// generateButtons();
-// randomWord();
