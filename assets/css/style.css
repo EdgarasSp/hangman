@@ -1,6 +1,8 @@
 h1 {
-    color: blue;
+    color: rgb(63, 28, 145);
     text-align: center;
+    text-shadow: black;
+    margin-bottom: 30px;
   
 }
 
@@ -35,9 +37,10 @@ body {
 .cards {
     /* border: 1px solid blue; */
     width:170px;
-    height: 350px;
+    height: 320px;
     border-radius: 2rem;
     background-color:#f7f7f7;
+    
     
 }
 
@@ -46,13 +49,37 @@ body {
     margin: 20% 0;
 }
 
-.cards ul {
-    height: 40%;
+.cards h2::before {
+    content:"Game Mode:";
+    font-size: 1.2rem;
+    display: block;
+    font-weight: bold;
 }
 
+.cards ul {
+    height: 40%;
+    display:flex;
+    text-align: center;
+    flex-direction: column;
+    
+}
+
+.cards ul li {
+    color:#2E4053;
+    font-size: 1.8rem;
+}
+
+br {
+    color: black;
+}
 .play {
     margin:auto;
     display:block;
+    color:#f7f7f7;
+    background-color: rgb(63, 28, 145);
+    width: 10rem;
+    height: 4rem;
+    border-radius: 1rem;
 }
 
 /* Game */
@@ -96,7 +123,7 @@ ul {
 
 li {
     justify-content: space-between;
-    color: green;
+    color: #2E4053;
     margin: 0 1rem;
     font-size: 2rem;   
 }
@@ -105,10 +132,11 @@ li {
 
 #word-guess {
     text-align: center;
-    justify-items: center;
+   
     text-transform: uppercase;
     letter-spacing: 1rem;
     height: 8rem;
+    
 
 }
 

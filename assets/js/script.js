@@ -27,6 +27,8 @@ let gameType = localStorage.getItem("gameSelection");
 let word = "";
 let guessed = [];
 let guessState = null;
+let lives = 8;
+let mistakeCont = 0;
 
 
 
