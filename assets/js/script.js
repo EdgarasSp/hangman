@@ -28,25 +28,51 @@ let word = "";
 let guessed = [];
 let guessState = null;
 let lives = 8;
-let mistakeCont = 0;
+let mistakeCount = 0;
 
 
 
 // Generates on screen lives TBC
 
+function generateLives () {
+  let livesHTML = '12345678'.split('').map(number =>
+    `
+      <ul>
+        <li
+        class="lives"
+        id='` + number + `'
+        data-type='` + number + `'
+        >
+        <i class="fas fa-heart"></i>
+        </li>
+      </ul>
+    `).join('');
+
+    document.getElementById('lives-status').innerHTML = livesHTML;
+};
+
+//   let livesIcons = 0;
+//     while (livesIcons <= 8) {
+//       livesIcons++;
+      
+//     }
+// };
+
+generateLives ();
+
 // Generates on screen Keyboard
 function generateButtons() {
-    let buttonsHTML = 'abcdefghijklmnopqrstuvwxyz'.split('').map(letter =>
-      `
-        <div
-          class="keys"
-          id='` + letter + `'
-          data-type='` + letter + `'
-          onClick="checkGuess('` + letter + `')"
-          >
-        <a>  ` + letter + ` </a>
-        </div>
-      `).join('');
+   let buttonsHTML = 'abcdefghijklmnopqrstuvwxyz'.split('').map(letter =>
+    `
+      <div
+        class="keys"
+        id='` + letter + `'
+        data-type='` + letter + `'
+        onClick="checkGuess('` + letter + `')"
+        >
+      <a>  ` + letter + ` </a>
+      </div>
+    `).join('');
 
     document.getElementById('keyboard').innerHTML = buttonsHTML;
 };
@@ -91,12 +117,14 @@ function checkGuess(chosenLetter) {
     document.getElementById(chosenLetter).style.backgroundColor = '#7DCEA0';
     console.log(`first line - correct letter guess`);
   } else if (word.indexOf(chosenLetter) === -1) {
+    mistakeCount++;
     document.getElementById(chosenLetter).style.backgroundColor = '#ad8ba8';
     console.log(`second line - wrong letter guess`);
   }
 }
 
 console.log(guessed);
+console.log(mistakeCount);
 
 function guess() {
   guessState = word.split('').map(letter => (guessed.indexOf(letter) >= 0 ? letter : " _ ")).join('');

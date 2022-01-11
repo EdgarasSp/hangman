@@ -69,9 +69,6 @@ body {
     font-size: 1.8rem;
 }
 
-br {
-    color: black;
-}
 .play {
     margin:auto;
     display:block;
@@ -132,7 +129,6 @@ li {
 
 #word-guess {
     text-align: center;
-   
     text-transform: uppercase;
     letter-spacing: 1rem;
     height: 8rem;
@@ -149,7 +145,6 @@ li {
 /* Keyboard*/
 
 #keyboard {
-    /* border: orange 1px solid; */
     display:flex;
     flex-direction:row;
     flex-wrap: wrap;
@@ -220,7 +215,7 @@ li {
     box-shadow: 
         inset 2px 3px 0px #818181,
         inset 1px 1px 1px 0px #fff,
-        1px 1px 1px 0px #7a7a7a;
+        1px 1px 1px 0px #7a7a7a;  
 }
 /* Random Letter Generator */
 
@@ -237,6 +232,8 @@ li {
 #action-status {
     text-align: center;
     font-size: 1rem;
+    
+    
 }
 
 
