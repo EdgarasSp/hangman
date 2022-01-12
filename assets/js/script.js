@@ -3,7 +3,9 @@
 document.addEventListener("DOMContentLoaded", function() {
   if (document.URL.includes("game.html")) {
     generateButtons();  
+    generateLives ();
     runGame();
+    
   } else {
     return;
   }
@@ -23,12 +25,13 @@ document.addEventListener("DOMContentLoaded", function() {
 // declare var
 
 // Retrieves from memory selected game type from index.html
-let gameType = localStorage.getItem("gameSelection");
-let word = "";
-let guessed = [];
-let guessState = null;
-let lives = 8;
-let mistakeCount = 0;
+var gameType = localStorage.getItem("gameSelection");
+var word = "";
+var guessed = [];
+var guessState = null;
+var lives = 8;
+var mistakeCount = 0;
+var score = 0;
 
 
 
@@ -51,14 +54,6 @@ function generateLives () {
     document.getElementById('lives-status').innerHTML = livesHTML;
 };
 
-//   let livesIcons = 0;
-//     while (livesIcons <= 8) {
-//       livesIcons++;
-      
-//     }
-// };
-
-generateLives ();
 
 // Generates on screen Keyboard
 function generateButtons() {
@@ -77,10 +72,7 @@ function generateButtons() {
     document.getElementById('keyboard').innerHTML = buttonsHTML;
 };
 
-// Update HTML info-bar
-function difficulty () {
-  document.getElementById('info-difficulty').innerHTML = gameType;
-}
+
 
 function runGame (gameType){
   randomWord();
@@ -114,27 +106,48 @@ function checkGuess(chosenLetter) {
  
   if (word.indexOf(chosenLetter) >= 0) {
     guess();
+    incrementCorrectScore();
     document.getElementById(chosenLetter).style.backgroundColor = '#7DCEA0';
-    console.log(`first line - correct letter guess`);
   } else if (word.indexOf(chosenLetter) === -1) {
     mistakeCount++;
+    incrementIncorrectScore();
     document.getElementById(chosenLetter).style.backgroundColor = '#ad8ba8';
-    console.log(`second line - wrong letter guess`);
+    
   }
 }
 
 console.log(guessed);
-console.log(mistakeCount);
+
 
 function guess() {
   guessState = word.split('').map(letter => (guessed.indexOf(letter) >= 0 ? letter : " _ ")).join('');
 
   document.getElementById('word-random').innerHTML = guessState;
 }
+
+// Update HTML info-bar
+function difficulty () {
+  document.getElementById('info-difficulty').innerHTML = gameType;
+}
+
+// Update Game Lives
+
+// function updateGameLives () {
+//   let totalLives = document.getElementsByTagName('i');
+
+//     for (let i = totalLives; i < mistakeCount; i++) {
+//       console.log(totalLives[i]);
+
+//     // document.getElementsByTagName('i').innerHTML = livesHTML;
+
+//   console.log(totalLives);
+// };
+
+
+
 // function randomLetter (){}
 //     function displayRandomLetter () {}
 
-// function checkAnswer () {}
 
 // function timerMedium (){}
 //     function checkTimeOk () {}
@@ -148,9 +161,23 @@ function guess() {
 //     function checkGameWon () {}
 //     function checkGameLost () {}
 
-// function scoreTracker () {}
-//     function incrementCorrectScore(){}
-//     function incrementIncorrectScore(){}
+// function scoreTracker () {
+
+// }
+function incrementCorrectScore(){
+  let currentScore = parseInt(document.getElementById("info-score").innerText);
+  document.getElementById("info-score").innerText = currentScore += 10;
+}
+
+function incrementIncorrectScore(){
+  let currentScore = parseInt(document.getElementById("info-score").innerText);
+  
+  if (currentScore === 0) {
+    document.getElementById("info-score").innerText = 0;
+  } else {
+    document.getElementById("info-score").innerText = --currentScore;
+  }
+};
 
 
 // function actionTracker () {}
@@ -160,4 +187,3 @@ function guess() {
 
 
 // function gameEnd () {}
-
