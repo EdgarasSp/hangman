@@ -151,9 +151,41 @@ function difficulty () {
 //     function displayRandomLetter () {}
 
 
-// function timerMedium (){}
-//     function checkTimeOk () {}
-//     function checkTimeLost () {}
+let timeRemaining;
+
+function gameTimer (){
+  let gameTime = document.getElementById('info-timer');
+  if (gameType === "medium") {
+    timeRemaining = 5;
+    timer = setInterval(function() {
+      timeRemaining -= 1;
+      gameTime.innerHTML = timeRemaining;
+      if (timeRemaining === 0) {
+        checkGameEnd ();
+        clearInterval(timer);        
+      }
+    },1000)
+  } else if (gameType === "hard") {
+    timeRemaining = 3;
+    timer = setInterval(function() {
+      timeRemaining -= 1;
+      gameTime.innerHTML = timeRemaining;
+      if (timeRemaining === 0) {
+        checkGameEnd (); 
+        clearInterval(timer);     
+      }
+    },1000)
+  } else {
+      if (document.URL.includes("game.html")) {
+        document.getElementById('timer').hidden = true;
+    }
+  }  
+}
+
+gameTimer ();
+
+    // function checkTimeOk () {}
+    // function checkTimeLost () {}
 
 // function timerHard () {}
 //     function checkTimeOk () {}
@@ -191,7 +223,10 @@ function checkGameEnd () {
   if (guessState === word) {
     document.getElementById('keyboard').innerHTML = 'You Won!!!';
   } else if (mistakeCount === 8) {
-    document.getElementById('keyboard').innerHTML = 'You Lost!!!';
+    document.getElementById('keyboard').innerHTML = 'You Lost, too many guesses!!!';
+    document.getElementById('word-random').innerHTML = word;
+  } else if (timeRemaining === 0) {
+    document.getElementById('keyboard').innerHTML = 'You Lost, run out of time!!!';
     document.getElementById('word-random').innerHTML = word;
   }
 };
