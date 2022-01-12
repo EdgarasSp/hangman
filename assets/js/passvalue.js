@@ -9,7 +9,7 @@ document.addEventListener("DOMContentLoaded", function() {
             if (document.URL.includes("index.html")) {
                 let gameTypeSelected = this.getAttribute("data-type");
                 localStorage.setItem("gameSelection", gameTypeSelected);
-                window.location.href='./game.html';
+                window.location.href='game.html';
                 console.log(gameTypeSelected);
             } else {
             //checks if generate button pressed
