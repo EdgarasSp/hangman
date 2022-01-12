@@ -72,12 +72,11 @@ function generateButtons() {
     document.getElementById('keyboard').innerHTML = buttonsHTML;
 };
 
-
-
 function runGame (gameType){
   randomWord();
   guess();
-  difficulty ()
+  difficulty ();
+  
 }
 
 // Generates random word based on variables and selected game type
@@ -108,10 +107,13 @@ function checkGuess(chosenLetter) {
     guess();
     incrementCorrectScore();
     document.getElementById(chosenLetter).style.backgroundColor = '#7DCEA0';
+    checkGameEnd ();
   } else if (word.indexOf(chosenLetter) === -1) {
     mistakeCount++;
     incrementIncorrectScore();
     document.getElementById(chosenLetter).style.backgroundColor = '#ad8ba8';
+    checkGameEnd ();
+    
     
   }
 }
@@ -163,7 +165,6 @@ function difficulty () {
 
 // function scoreTracker () {
 
-// }
 function incrementCorrectScore(){
   let currentScore = parseInt(document.getElementById("info-score").innerText);
   document.getElementById("info-score").innerText = currentScore += 10;
@@ -186,4 +187,12 @@ function incrementIncorrectScore(){
 //     function resetGame () {}
 
 
-// function gameEnd () {}
+function checkGameEnd () {
+  if (guessState === word) {
+    document.getElementById('keyboard').innerHTML = 'You Won!!!';
+  } else if (mistakeCount === 8) {
+    document.getElementById('keyboard').innerHTML = 'You Lost!!!';
+    document.getElementById('word-random').innerHTML = word;
+  }
+};
+
