@@ -75,8 +75,11 @@ function generateButtons() {
 function runGame (gameType){
   randomWord();
   guess();
-  difficulty ();
-  
+  difficulty ();  
+  // gameStatus ();
+  if (document.URL.includes("game.html")) {
+    gameTimer ();
+  }
 }
 
 // Generates random word based on variables and selected game type
@@ -112,9 +115,7 @@ function checkGuess(chosenLetter) {
     mistakeCount++;
     incrementIncorrectScore();
     document.getElementById(chosenLetter).style.backgroundColor = '#ad8ba8';
-    checkGameEnd ();
-    
-    
+    checkGameEnd ();    
   }
 }
 
@@ -150,13 +151,14 @@ function difficulty () {
 // function randomLetter (){}
 //     function displayRandomLetter () {}
 
+// function timer
 
 let timeRemaining;
 
 function gameTimer (){
   let gameTime = document.getElementById('info-timer');
   if (gameType === "medium") {
-    timeRemaining = 5;
+    timeRemaining = 6;
     timer = setInterval(function() {
       timeRemaining -= 1;
       gameTime.innerHTML = timeRemaining;
@@ -166,7 +168,7 @@ function gameTimer (){
       }
     },1000)
   } else if (gameType === "hard") {
-    timeRemaining = 3;
+    timeRemaining = 4;
     timer = setInterval(function() {
       timeRemaining -= 1;
       gameTime.innerHTML = timeRemaining;
@@ -182,18 +184,7 @@ function gameTimer (){
   }  
 }
 
-gameTimer ();
 
-    // function checkTimeOk () {}
-    // function checkTimeLost () {}
-
-// function timerHard () {}
-//     function checkTimeOk () {}
-//     function checkTimeLost () {}
-
-// function livesTracker () {}
-//     function checkGameWon () {}
-//     function checkGameLost () {}
 
 // function scoreTracker () {
 
@@ -230,4 +221,23 @@ function checkGameEnd () {
     document.getElementById('word-random').innerHTML = word;
   }
 };
+
+// function gameStatus () {
+//   if (document.URL.includes("game.html")) {
+//     if (guessState === word) {
+//       console.log(`display`);
+//       document.getElementById('game-area').setAttribute('style', 'display:none;');
+//       document.getElementById('game-won-popup').hidden = false;
+//     } else if (mistakeCount === 8) {
+//       document.getElementById('game-area').hidden = true;
+//       document.getElementById('game-lost-popup').hidden = false;
+//     } else if (mistakeCount === 8) {
+//       document.getElementById('game-area').hidden = true;
+//       document.getElementById('game-lost-popup').hidden = false;
+//     }
+//   } else {
+//     document.getElementById('game-won-popup').hidden = true;
+//     document.getElementById('game-lost-popup').hidden = true;
+//   }
+// }
 
