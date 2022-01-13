@@ -11,11 +11,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 localStorage.setItem("gameSelection", gameTypeSelected);
                 window.location.href='game.html';
                 console.log(gameTypeSelected);
-            } else {
-            //checks if generate button pressed
-                let randomLetter = this.getAttribute("data-type");
-                alert(`Generate Button Pressed`);
-           }
+            } 
         })
     }
 });

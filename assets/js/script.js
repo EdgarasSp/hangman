@@ -63,7 +63,7 @@ function generateButtons() {
         class="keys"
         id='` + letter + `'
         data-type='` + letter + `'
-        onClick="checkGuess('` + letter + `')"
+        onClick="checkGuess('` + letter + `');timerReset()"
         >
       <a>  ` + letter + ` </a>
       </div>
@@ -101,7 +101,7 @@ function randomWord() {
 }
 
 function checkGuess(chosenLetter) {
-  guessed.indexOf(chosenLetter) === -1 ? guessed.push(chosenLetter) : null;
+  guessed.indexOf(chosenLetter) === -1 ? guessed.push(chosenLetter) :   null;
   document.getElementById(chosenLetter).style.pointerEvents = 'none';
   document.getElementById(chosenLetter).childNodes[1].style.color = '#2E4053';
   document.getElementById(chosenLetter).childNodes[1].style.fontSize = '12px';
@@ -110,12 +110,14 @@ function checkGuess(chosenLetter) {
     guess();
     incrementCorrectScore();
     document.getElementById(chosenLetter).style.backgroundColor = '#7DCEA0';
+    
     checkGameEnd ();
   } else if (word.indexOf(chosenLetter) === -1) {
     mistakeCount++;
     incrementIncorrectScore();
     document.getElementById(chosenLetter).style.backgroundColor = '#ad8ba8';
     checkGameEnd ();    
+    
   }
 }
 
@@ -153,28 +155,58 @@ function difficulty () {
 
 // function timer
 
-let timeRemaining;
+// let timeRemaining;
+
+// function gameTimer (){
+//   let gameTime = document.getElementById('info-timer');
+//   if (gameType === "medium") {
+//     timeRemaining = 6;
+//     timer = setInterval(function() {
+//       timeRemaining -= 1;
+//       gameTime.innerHTML = timeRemaining;
+//       if (timeRemaining === 0) {
+//         checkGameEnd ();
+//         clearInterval(timer);        
+//       }
+//     },1000)
+//   } else if (gameType === "hard") {
+//     timeRemaining = 4;
+//     timer = setInterval(function() {
+//       timeRemaining -= 1;
+//       gameTime.innerHTML = timeRemaining;
+//       if (timeRemaining === 0) {
+//         checkGameEnd (); 
+//         clearInterval(timer);     
+//       }
+//     },1000)
+//   } else {
+//       if (document.URL.includes("game.html")) {
+//         document.getElementById('timer').hidden = true;
+//     }
+//   }  
+// }
+
+let timeRemainingMed = 6;
+let timeRemainingHard = 4;
 
 function gameTimer (){
   let gameTime = document.getElementById('info-timer');
   if (gameType === "medium") {
-    timeRemaining = 6;
     timer = setInterval(function() {
-      timeRemaining -= 1;
-      gameTime.innerHTML = timeRemaining;
-      if (timeRemaining === 0) {
+      timeRemainingMed -= 1;
+      gameTime.innerHTML = timeRemainingMed;
+      if (timeRemainingMed === 0) {
         checkGameEnd ();
         clearInterval(timer);        
       }
     },1000)
   } else if (gameType === "hard") {
-    timeRemaining = 4;
     timer = setInterval(function() {
-      timeRemaining -= 1;
-      gameTime.innerHTML = timeRemaining;
-      if (timeRemaining === 0) {
-        checkGameEnd (); 
-        clearInterval(timer);     
+      timeRemainingHard -= 1;
+      gameTime.innerHTML = timeRemainingHard;
+      if (timeRemainingHard === 0) {
+        checkGameEnd ();
+        clearInterval(timer);        
       }
     },1000)
   } else {
@@ -184,7 +216,10 @@ function gameTimer (){
   }  
 }
 
-
+function timerReset() {
+  timeRemainingMed = 6;
+  timeRemainingHard = 4;
+}
 
 // function scoreTracker () {
 
@@ -199,7 +234,7 @@ function incrementIncorrectScore(){
   if (currentScore === 0) {
     document.getElementById("info-score").innerText = 0;
   } else {
-    document.getElementById("info-score").innerText = --currentScore;
+    document.getElementById("info-score").innerText = currentScore -=5;
   }
 };
 
@@ -216,9 +251,11 @@ function checkGameEnd () {
   } else if (mistakeCount === 8) {
     document.getElementById('keyboard').innerHTML = 'You Lost, too many guesses!!!';
     document.getElementById('word-random').innerHTML = word;
-  } else if (timeRemaining === 0) {
-    document.getElementById('keyboard').innerHTML = 'You Lost, run out of time!!!';
-    document.getElementById('word-random').innerHTML = word;
+  } else if (gameType !== "easy") {
+      if ((document.getElementById("info-timer").innerText) === "0") {
+        document.getElementById('keyboard').innerHTML = 'You Lost, run out of time!!!';
+        document.getElementById('word-random').innerHTML = word;
+    }
   }
 };
 
