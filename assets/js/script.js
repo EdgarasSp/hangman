@@ -155,37 +155,6 @@ function difficulty () {
 
 // function timer
 
-// let timeRemaining;
-
-// function gameTimer (){
-//   let gameTime = document.getElementById('info-timer');
-//   if (gameType === "medium") {
-//     timeRemaining = 6;
-//     timer = setInterval(function() {
-//       timeRemaining -= 1;
-//       gameTime.innerHTML = timeRemaining;
-//       if (timeRemaining === 0) {
-//         checkGameEnd ();
-//         clearInterval(timer);        
-//       }
-//     },1000)
-//   } else if (gameType === "hard") {
-//     timeRemaining = 4;
-//     timer = setInterval(function() {
-//       timeRemaining -= 1;
-//       gameTime.innerHTML = timeRemaining;
-//       if (timeRemaining === 0) {
-//         checkGameEnd (); 
-//         clearInterval(timer);     
-//       }
-//     },1000)
-//   } else {
-//       if (document.URL.includes("game.html")) {
-//         document.getElementById('timer').hidden = true;
-//     }
-//   }  
-// }
-
 let timeRemainingMed = 6;
 let timeRemainingHard = 4;
 
@@ -217,8 +186,8 @@ function gameTimer (){
 }
 
 function timerReset() {
-  timeRemainingMed = 6;
-  timeRemainingHard = 4;
+  timeRemainingMed = 5;
+  timeRemainingHard = 3;
 }
 
 // function scoreTracker () {
@@ -247,13 +216,34 @@ function incrementIncorrectScore(){
 
 function checkGameEnd () {
   if (guessState === word) {
-    document.getElementById('keyboard').innerHTML = 'You Won!!!';
+    document.getElementById('keyboard').innerHTML =`
+    <div id="message">
+      <p class="won-message"><strong>congratulations... you won!!</strong></p>
+      <div id="options">
+        <button id="restart" class="gameEndButtons"<span>Restart</span></button>
+        <button id="returnMenu" class="gameEndButtons" <span>Menu</span></button>
+        </div>
+    </div>`;
   } else if (mistakeCount === 8) {
-    document.getElementById('keyboard').innerHTML = 'You Lost, too many guesses!!!';
+    document.getElementById('keyboard').innerHTML =`
+    <div id="message">
+      <p class="lost-message"><strong>Oh No... you run out of lives!!</strong></p>
+      <div id="options">
+        <button id="restart" class="gameEndButtons"<span>Restart</span></button>
+        <button id="returnMenu" class="gameEndButtons" <span>Menu</span></button>
+        </div>
+    </div>`;
     document.getElementById('word-random').innerHTML = word;
   } else if (gameType !== "easy") {
       if ((document.getElementById("info-timer").innerText) === "0") {
-        document.getElementById('keyboard').innerHTML = 'You Lost, run out of time!!!';
+        document.getElementById('keyboard').innerHTML =`
+        <div id="message">
+          <p><strong>Oh No... you run out of time!!</strong></p>
+          <div id="options">
+            <button id="restart" class="gameEndButtons"<span>Restart</span></button>
+            <button id="returnMenu" class="gameEndButtons" <span>Menu</span></button>
+            </div>
+        </div>`;
         document.getElementById('word-random').innerHTML = word;
     }
   }
