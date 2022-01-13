@@ -237,9 +237,10 @@ li {
 
 #letter-random {
     /* border:  royalblue 1px solid; */
-    height: 8rem;
+    height: 7rem;
     text-align: center;
-    padding: 1rem;
+    padding-top: 1rem;
+
 }
 
 
@@ -251,6 +252,35 @@ li {
     
 }
 
+#back-menu {
+    display:inline-block;
+    text-align: right;
+    width: 100%;
+    
+    /* border: red 1px solid; */
+}
+
+#game-menu {
+    background-color: transparent;
+    color: #2E4053;
+    border: 1.5px #f7f7f7 solid;
+    border-radius: 1rem;
+    margin-right: 20px;
+    padding: 0 5px;
+    text-transform: uppercase;
+    text-align: center;
+    /* letter-spacing: 0.5rem; */
+}
+
+#back-menu #game-menu:hover {
+    /* background-color: rgb(63, 28, 145); */
+    /* color: #f7f7f7; */
+    border: 1.5px rgb(63, 28, 145) solid;
+    color: rgb(63, 28, 145);
+    text-transform: bold;
+    font-weight: bolder;
+        
+}
 /* GameOver  */
 
 #message  {

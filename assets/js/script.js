@@ -126,7 +126,6 @@ console.log(guessed);
 
 function guess() {
   guessState = word.split('').map(letter => (guessed.indexOf(letter) >= 0 ? letter : " _ ")).join('');
-
   document.getElementById('word-random').innerHTML = guessState;
 }
 
@@ -164,8 +163,8 @@ function gameTimer (){
     timer = setInterval(function() {
       timeRemainingMed -= 1;
       gameTime.innerHTML = timeRemainingMed;
+      checkGameEnd ();
       if (timeRemainingMed === 0) {
-        checkGameEnd ();
         clearInterval(timer);        
       }
     },1000)
@@ -173,8 +172,8 @@ function gameTimer (){
     timer = setInterval(function() {
       timeRemainingHard -= 1;
       gameTime.innerHTML = timeRemainingHard;
+      checkGameEnd ();
       if (timeRemainingHard === 0) {
-        checkGameEnd ();
         clearInterval(timer);        
       }
     },1000)
@@ -186,8 +185,30 @@ function gameTimer (){
 }
 
 function timerReset() {
-  timeRemainingMed = 5;
-  timeRemainingHard = 3;
+  timeRemainingMed = 6;
+  timeRemainingHard = 4;
+}
+
+function scoreReset () {
+  document.getElementById("info-score").innerText = 0;
+}
+// ISSUE WITH TIMER, WHEN PRESSED BUTTONS FAST TIMER BREAKS HOW TO TIMER FUNCTION IF GAME OVER
+function gameRestart() {
+  mistakeCount = 0;
+  guessed = [];
+  currentScore = 0;
+  timerReset()
+  randomWord();
+  guess()
+  generateLives();
+  generateButtons();
+  gameTimer ()
+  scoreReset ()
+  document.getElementById('letter-random').hidden = false;
+  document.getElementById('action-status').hidden = false; 
+  document.getElementById('game-menu').hidden = false;
+  
+  // console.log(`restart button pressed`);
 }
 
 // function scoreTracker () {
@@ -216,35 +237,48 @@ function incrementIncorrectScore(){
 
 function checkGameEnd () {
   if (guessState === word) {
+    document.getElementById('info-timer').innerHTML = "-";
     document.getElementById('keyboard').innerHTML =`
     <div id="message">
       <p class="won-message"><strong>congratulations... you won!!</strong></p>
       <div id="options">
-        <button id="restart" class="gameEndButtons"<span>Restart</span></button>
-        <button id="returnMenu" class="gameEndButtons" <span>Menu</span></button>
+        <button id="restart" class="gameEndButtons" onclick="gameRestart()" <span>Restart</span></button>
+        <button id="returnMenu" class="gameEndButtons" onclick="location.href='./index.html'" <span>Menu</span></button>
         </div>
     </div>`;
+    document.getElementById('letter-random').hidden = true;
+    document.getElementById('action-status').hidden = true;
+    document.getElementById('game-menu').hidden = true;
   } else if (mistakeCount === 8) {
+    document.getElementById('info-timer').innerHTML = "-";
     document.getElementById('keyboard').innerHTML =`
     <div id="message">
       <p class="lost-message"><strong>Oh No... you run out of lives!!</strong></p>
       <div id="options">
-        <button id="restart" class="gameEndButtons"<span>Restart</span></button>
-        <button id="returnMenu" class="gameEndButtons" <span>Menu</span></button>
+        <button id="restart" class="gameEndButtons" onclick="gameRestart()" <span>Restart</span></button>
+        <button id="returnMenu" class="gameEndButtons" onclick="location.href='./index.html'" <span>Menu</span></button>
         </div>
     </div>`;
     document.getElementById('word-random').innerHTML = word;
+    document.getElementById('letter-random').hidden = true;
+    document.getElementById('action-status').hidden = true;
+    document.getElementById('game-menu').hidden = true;
   } else if (gameType !== "easy") {
       if ((document.getElementById("info-timer").innerText) === "0") {
+        document.getElementById('info-timer').innerHTML = "-";
         document.getElementById('keyboard').innerHTML =`
         <div id="message">
-          <p><strong>Oh No... you run out of time!!</strong></p>
+          <p class="lost-message"><strong>Oh No... you run out of time!!</strong></p>
           <div id="options">
-            <button id="restart" class="gameEndButtons"<span>Restart</span></button>
-            <button id="returnMenu" class="gameEndButtons" <span>Menu</span></button>
+            <button id="restart" class="gameEndButtons" onclick="gameRestart()" <span>Restart</span></button>
+            <button id="returnMenu" class="gameEndButtons" onclick="location.href='./index.html'" <span>Menu</span></button>
             </div>
         </div>`;
         document.getElementById('word-random').innerHTML = word;
+        document.getElementById('letter-random').hidden = true;
+        document.getElementById('action-status').hidden = true;
+        document.getElementById('game-menu').hidden = true;
+
     }
   }
 };
