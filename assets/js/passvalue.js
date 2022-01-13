@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", function() {
      for (let button of buttons) {
         button.addEventListener("click", function() {
             // checks if on main page to identify the game type selected
-            if (document.URL.includes("index.html")) {
+            if (document.body.contains( document.getElementById('menu') )) {
                 let gameTypeSelected = this.getAttribute("data-type");
                 localStorage.setItem("gameSelection", gameTypeSelected);
                 window.location.href='game.html';
@@ -19,3 +19,5 @@ document.addEventListener("DOMContentLoaded", function() {
         })
     }
 });
+
+// document.URL.includes("index.html")
