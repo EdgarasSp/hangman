@@ -50,10 +50,11 @@ h3 {
 
 #instructions {
     border-radius: 2rem;
-    background-color:#f7f7f7;
+    background-color:#ecdce9;
     text-align: center;
     margin: 0% 5% 2% 5%;
     width: 90%;
+    /* border-top: #2E4053 1px solid; */
     border-bottom: #2E4053 1px solid;
     
 }
@@ -379,5 +380,121 @@ li {
     color: #943126;
 }
 
+/* @media screen and (max-width: 1024px) {
 
+}
 
+@media screen and (max-width: 768px) {
+
+}
+
+@media screen and (max-width: 548px) {
+
+} */
+
+@media screen and (max-width: 320px) {
+
+    #main-container {
+        width:90%;
+        min-width: 280px;
+        height: 600px;
+        left: 10%;
+        top: 10%;
+        -webkit-transform: translate(-10%, -10%);
+        transform: translate(-5%, -10%);
+    }
+
+    h1 {
+        color: rgb(63, 28, 145);
+        margin: 5px 0;
+        letter-spacing: 1rem;
+        font-size: 20px;
+    }
+
+    h1:before, h1:after {
+        width: 15rem;
+    }
+
+    #instructions {
+        margin: 0 auto;
+        margin-bottom: 5px;
+    }
+
+    #game-type {
+        display: grid;
+        grid-template-rows: repeat(3, 33%);
+    }
+
+    .cards {
+        width:90%;
+        min-width: 260px;
+        height: 80px;
+        margin-bottom: 5px;
+        align-items: center;
+        display: grid;
+        grid-template-columns: 28% 38% 24%;
+        grid-auto-rows: 100%;
+    }
+    
+    .cards h2 {
+        position: absolute;
+        align-content: center;
+        margin: 1% 0 0 0;
+        font-size: 1.75rem;
+        width:28%;
+    }
+    
+    .cards h2::before {
+        font-size: 1.1rem;
+    }
+    
+    .cards ul {
+        justify-content:center;
+    }
+    
+    .cards ul li {
+        font-size: 1.1rem;
+        text-align: justify;
+    }
+    
+    .play {
+        width: 8rem;
+        height: 4rem;
+        font-size: 1.25rem;
+    }
+    
+    /* game */
+
+    #game-status {
+        position: relative;
+        justify-content:center; 
+        display: grid;
+        grid-template-columns: repeat(2, 45%);
+        grid-template-rows: repeat(2, 33%);
+        grid-row-gap: 10px;
+        grid-column-gap: 40px;
+        margin:10px;
+        grid-auto-rows: 100%;
+    }
+
+    .info-bar {
+        width: auto;
+    }
+
+    #game-selected{
+        grid-column: span 2;
+    }
+
+    #lives-status {
+
+        margin: 0;
+        padding: 0;
+        width: 100%;
+    }
+
+    li i {
+        font-size: 16px;
+        justify-content:center;
+        margin-bottom: 20px;
+    }
+}
