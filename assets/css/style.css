@@ -1,7 +1,7 @@
 * {
-    margin: 0px;
-    padding: 0px;
-    border: 0px;
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
 }
 
 
@@ -24,7 +24,8 @@ h1:before, h1:after {
 }
 
 body {
-    background-color:#143d59;
+    background-color:#05386b;
+
 }
 
 /* fixed game window parameters */
