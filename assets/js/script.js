@@ -5,7 +5,6 @@ document.addEventListener("DOMContentLoaded", function() {
     generateButtons();  
     generateLives ();
     runGame();
-    
   } else {
     return;
   }
@@ -29,7 +28,7 @@ var gameType = localStorage.getItem("gameSelection");
 var word = "";
 var guessed = [];
 var guessState = null;
-var lives = 8;
+var lives = "12345678";
 var mistakeCount = 0;
 var score = 0;
 
@@ -38,9 +37,9 @@ var score = 0;
 // Generates on screen lives TBC
 
 function generateLives () {
-  let livesHTML = '12345678'.split('').map(number =>
+  let livesHTML = lives.split('').map(number =>
     `
-      <ul>
+      <ul id="heart">
         <li
         class="lives"
         id='` + number + `'
@@ -54,9 +53,34 @@ function generateLives () {
     document.getElementById('lives-status').innerHTML = livesHTML;
 };
 
+// Update Game Lives
+
+// function updateGameLives () {
+//     let currentLives = document.getElementsByTagName('i');
+
+//     for (let i = 0; i< currentLives.length; i++) {
+    
+//       currentLives[i].removeAttribute("<i class='far fa-heart'></i>");
+//       // currentLives[i].splice(2, 0,"<i class='far fa-heart'></i>");
+//       console.log(currentLives[i]);
+    // }
+
+  // let totalLives = document.getElementsByTagName('i');
+
+    // for (let i = totalLives; i < mistakeCount; i++) {
+      // console.log(totalLives[i]);
+
+    // document.getElementsByTagName('i').innerHTML = livesHTML;
+
+  // console.log(totalLives);
+// };
+
+// updateGameLives ();
 
 // Generates on screen Keyboard
 function generateButtons() {
+
+
    let buttonsHTML = 'abcdefghijklmnopqrstuvwxyz'.split('').map(letter =>
     `
       <div
@@ -110,42 +134,30 @@ function checkGuess(chosenLetter) {
     guess();
     incrementCorrectScore();
     document.getElementById(chosenLetter).style.backgroundColor = '#7DCEA0';
-    
     checkGameEnd ();
   } else if (word.indexOf(chosenLetter) === -1) {
     mistakeCount++;
+    updateLives()
     incrementIncorrectScore();
     document.getElementById(chosenLetter).style.backgroundColor = '#ad8ba8';
     checkGameEnd ();    
-    
   }
 }
 
 console.log(guessed);
 
 
+
+
 function guess() {
   guessState = word.split('').map(letter => (guessed.indexOf(letter) >= 0 ? letter : " _ ")).join('');
   document.getElementById('word-random').innerHTML = guessState;
-}
+};
 
 // Update HTML info-bar
 function difficulty () {
   document.getElementById('info-difficulty').innerHTML = gameType;
-}
-
-// Update Game Lives
-
-// function updateGameLives () {
-//   let totalLives = document.getElementsByTagName('i');
-
-//     for (let i = totalLives; i < mistakeCount; i++) {
-//       console.log(totalLives[i]);
-
-//     // document.getElementsByTagName('i').innerHTML = livesHTML;
-
-//   console.log(totalLives);
-// };
+};
 
 
 
@@ -204,8 +216,8 @@ function gameRestart() {
   generateButtons();
   gameTimer ()
   scoreReset ()
-  document.getElementById('letter-random').hidden = false;
-  document.getElementById('action-status').hidden = false; 
+  document.getElementById('letter-random').hidden = true; // hidden until feature implemented
+  document.getElementById('action-status').hidden = true; // hidden until feature implemented
   document.getElementById('game-menu').hidden = false;
   
   // console.log(`restart button pressed`);
@@ -228,6 +240,14 @@ function incrementIncorrectScore(){
   }
 };
 
+// on mistake replace lives icon to hollow heart
+
+function updateLives() {
+  let removeLive = document.getElementById('heart').children.length;
+  if (removeLive) {
+   document.getElementsByClassName('fas fa-heart')[0].setAttribute("class","far fa-heart");
+  }
+}
 
 // function actionTracker () {}
 

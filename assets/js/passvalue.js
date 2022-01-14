@@ -16,4 +16,3 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 });
 
-// document.URL.includes("index.html")
