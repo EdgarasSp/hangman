@@ -1,8 +1,8 @@
 h1 {
     color: rgb(63, 28, 145);
     text-align: center;
-    text-shadow: black;
-    margin-bottom: 30px;
+    /* text-shadow: black 50px; */
+    margin-bottom: 5px;
   
 }
 
@@ -28,6 +28,39 @@ body {
 
 /* Menu */
 
+h3 {
+    color: rgb(63, 28, 145);
+    text-align: center;
+    font-size: 1.25rem;
+    margin: 0 0 5px 0;
+    padding-top: 5px;
+    font-weight: bold;
+    text-transform: uppercase;
+} 
+
+#instructions {
+    border-radius: 2rem;
+    background-color:#f7f7f7;
+    text-align: center;
+    margin-left: 5%;
+    width: 90%;
+    
+}
+
+#instructions p{
+    font-size: 1.25rem;
+    padding: 0 5%;
+    text-align: center;
+    margin-bottom: 10px;
+    color: #2E4053;
+    
+}
+#instructions .justify{
+    text-align: justify;
+}
+
+
+
 #game-type {
     display:flex;
     flex-direction: row;
@@ -37,7 +70,7 @@ body {
 .cards {
     /* border: 1px solid blue; */
     width:170px;
-    height: 320px;
+    height: 200px;
     border-radius: 2rem;
     background-color:#f7f7f7;
     
@@ -46,7 +79,7 @@ body {
 
 .cards h2 {
     text-align: center;
-    margin: 20% 0;
+    margin: 10% 0 0 0;
 }
 
 .cards h2::before {
@@ -57,7 +90,7 @@ body {
 }
 
 .cards ul {
-    height: 40%;
+    height: 35%;
     display:flex;
     text-align: center;
     flex-direction: column;
@@ -66,7 +99,7 @@ body {
 
 .cards ul li {
     color:#2E4053;
-    font-size: 1.8rem;
+    font-size: 1.5rem;
 }
 
 .play {
@@ -75,7 +108,7 @@ body {
     color:#f7f7f7;
     background-color: rgb(63, 28, 145);
     width: 10rem;
-    height: 4rem;
+    height: 3.5rem;
     border-radius: 1rem;
 }
 
@@ -132,8 +165,6 @@ li {
     text-transform: uppercase;
     letter-spacing: 1rem;
     height: 8rem;
-    
-
 }
 
 #word-random {
