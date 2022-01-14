@@ -497,4 +497,16 @@ li {
         justify-content:center;
         margin-bottom: 20px;
     }
+
+    #word-guess {
+        letter-spacing: 0rem;
+        height: 4rem;
+        margin-bottom: 10px;
+        font-size:3rem;
+    }
+
+    #keyboard {
+        padding: 1rem 1rem;
+        height: 25em;
+    }
 }
