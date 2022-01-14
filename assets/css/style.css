@@ -1,3 +1,10 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    border: 0px;
+}
+
+
 h1 {
     color: rgb(63, 28, 145);
     text-align: center;
@@ -56,7 +63,6 @@ h3 {
     width: 90%;
     /* border-top: #2E4053 1px solid; */
     border-bottom: #2E4053 1px solid;
-    
 }
 
 #instructions p{
@@ -71,8 +77,6 @@ h3 {
     text-align: justify;
 }
 
-
-
 #game-type {
     display:flex;
     flex-direction: row;
@@ -80,14 +84,11 @@ h3 {
 }
 
 .cards {
-    /* border: 1px solid blue; */
     width:170px;
     height: 200px;
     border-radius: 2rem;
     background-color:#f7f7f7;
     border-bottom: #2E4053 1px solid;
-    
-    
 }
 
 .cards h2 {
@@ -298,7 +299,6 @@ li {
     height: 7rem;
     text-align: center;
     padding-top: 1rem;
-
 }
 
 
@@ -384,11 +384,11 @@ li {
 
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: px) {
 
 } */
 
-@media screen and (max-width: 548px) {
+@media screen and (max-width: 600px) {
 
     #main-container {
         width:90%;
@@ -432,7 +432,7 @@ li {
     
     .cards h2 {
         position: absolute;
-        align-content: center;
+        text-align: center;
         margin: 1% 0 0 0;
         font-size: 1.75rem;
         width:28%;
@@ -491,6 +491,7 @@ li {
         font-size: 20px;
         justify-content:center;
         margin-bottom: 20px;
+
     }
 
     li {

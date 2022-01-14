@@ -21,18 +21,17 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 });
 
-// declare var
+
 
 // Retrieves from memory selected game type from index.html
 var gameType = localStorage.getItem("gameSelection");
+// declare var
 var word = "";
 var guessed = [];
 var guessState = null;
 var lives = "12345678";
 var mistakeCount = 0;
 var score = 0;
-
-
 
 // Generates on screen lives TBC
 
@@ -53,34 +52,7 @@ function generateLives () {
     document.getElementById('lives-status').innerHTML = livesHTML;
 };
 
-// Update Game Lives
-
-// function updateGameLives () {
-//     let currentLives = document.getElementsByTagName('i');
-
-//     for (let i = 0; i< currentLives.length; i++) {
-    
-//       currentLives[i].removeAttribute("<i class='far fa-heart'></i>");
-//       // currentLives[i].splice(2, 0,"<i class='far fa-heart'></i>");
-//       console.log(currentLives[i]);
-    // }
-
-  // let totalLives = document.getElementsByTagName('i');
-
-    // for (let i = totalLives; i < mistakeCount; i++) {
-      // console.log(totalLives[i]);
-
-    // document.getElementsByTagName('i').innerHTML = livesHTML;
-
-  // console.log(totalLives);
-// };
-
-// updateGameLives ();
-
-// Generates on screen Keyboard
 function generateButtons() {
-
-
    let buttonsHTML = 'abcdefghijklmnopqrstuvwxyz'.split('').map(letter =>
     `
       <div
@@ -144,11 +116,6 @@ function checkGuess(chosenLetter) {
   }
 }
 
-console.log(guessed);
-
-
-
-
 function guess() {
   guessState = word.split('').map(letter => (guessed.indexOf(letter) >= 0 ? letter : " _ ")).join('');
   document.getElementById('word-random').innerHTML = guessState;
@@ -161,10 +128,9 @@ function difficulty () {
 
 
 
-// function randomLetter (){}
-//     function displayRandomLetter () {}
+// TBC function randomLetter (){}
+// TBC function displayRandomLetter () {}
 
-// function timer
 
 let timeRemainingMed = 6;
 let timeRemainingHard = 4;
@@ -204,7 +170,7 @@ function timerReset() {
 function scoreReset () {
   document.getElementById("info-score").innerText = 0;
 }
-// ISSUE WITH TIMER, WHEN PRESSED BUTTONS FAST TIMER BREAKS HOW TO TIMER FUNCTION IF GAME OVER
+
 function gameRestart() {
   mistakeCount = 0;
   guessed = [];
@@ -219,8 +185,7 @@ function gameRestart() {
   document.getElementById('letter-random').hidden = true; // hidden until feature implemented
   document.getElementById('action-status').hidden = true; // hidden until feature implemented
   document.getElementById('game-menu').hidden = false;
-  
-  // console.log(`restart button pressed`);
+
 }
 
 // function scoreTracker () {
@@ -249,12 +214,6 @@ function updateLives() {
   }
 }
 
-// function actionTracker () {}
-
-// function gameContinue () {}
-//     function resetGame () {}
-
-
 function checkGameEnd () {
   if (guessState === word) {
     document.getElementById('info-timer').innerHTML = "-";
@@ -273,7 +232,7 @@ function checkGameEnd () {
     document.getElementById('info-timer').innerHTML = "-";
     document.getElementById('keyboard').innerHTML =`
     <div id="message">
-      <p class="lost-message"><strong>Oh No... you run out of lives!!</strong></p>
+      <p class="lost-message"><strong>Oh No... you ran out of lives!!</strong></p>
       <div id="options">
         <button id="restart" class="gameEndButtons" onclick="gameRestart()" <span>Restart</span></button>
         <button id="returnMenu" class="gameEndButtons" onclick="location.href='./index.html'" <span>Menu</span></button>
@@ -288,7 +247,7 @@ function checkGameEnd () {
         document.getElementById('info-timer').innerHTML = "-";
         document.getElementById('keyboard').innerHTML =`
         <div id="message">
-          <p class="lost-message"><strong>Oh No... you run out of time!!</strong></p>
+          <p class="lost-message"><strong>Oh No... you ran out of time!!</strong></p>
           <div id="options">
             <button id="restart" class="gameEndButtons" onclick="gameRestart()" <span>Restart</span></button>
             <button id="returnMenu" class="gameEndButtons" onclick="location.href='./index.html'" <span>Menu</span></button>
@@ -302,23 +261,4 @@ function checkGameEnd () {
     }
   }
 };
-
-// function gameStatus () {
-//   if (document.URL.includes("game.html")) {
-//     if (guessState === word) {
-//       console.log(`display`);
-//       document.getElementById('game-area').setAttribute('style', 'display:none;');
-//       document.getElementById('game-won-popup').hidden = false;
-//     } else if (mistakeCount === 8) {
-//       document.getElementById('game-area').hidden = true;
-//       document.getElementById('game-lost-popup').hidden = false;
-//     } else if (mistakeCount === 8) {
-//       document.getElementById('game-area').hidden = true;
-//       document.getElementById('game-lost-popup').hidden = false;
-//     }
-//   } else {
-//     document.getElementById('game-won-popup').hidden = true;
-//     document.getElementById('game-lost-popup').hidden = true;
-//   }
-// }
 
