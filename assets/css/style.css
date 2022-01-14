@@ -2,8 +2,18 @@ h1 {
     color: rgb(63, 28, 145);
     text-align: center;
     /* text-shadow: black 50px; */
-    margin-bottom: 5px;
-  
+    margin: 20px 0;
+    letter-spacing: 2rem;
+    font-size: 25px;
+}
+
+h1:before, h1:after {
+    display: inline-block;
+    content: "";
+    border-top: .1rem solid rgb(63, 28, 145);
+    width: 10rem;
+    margin: 0 1rem;
+    transform: translateY(-1rem);
 }
 
 body {
@@ -14,7 +24,7 @@ body {
 
 #main-container {
     background-color: #e0c0db;
-    border: 1px solid black;
+    /* border: 1px solid black; */
     border-radius: 3rem;
     position:absolute;
     width:600px;
@@ -42,8 +52,9 @@ h3 {
     border-radius: 2rem;
     background-color:#f7f7f7;
     text-align: center;
-    margin-left: 5%;
+    margin: 0% 5% 2% 5%;
     width: 90%;
+    border-bottom: #2E4053 1px solid;
     
 }
 
@@ -73,6 +84,7 @@ h3 {
     height: 200px;
     border-radius: 2rem;
     background-color:#f7f7f7;
+    border-bottom: #2E4053 1px solid;
     
     
 }
@@ -123,6 +135,18 @@ h3 {
     padding: 1.5rem;
     /* border: red 1px solid; */
 }
+
+.info-bar {
+    background-color: #f7f7f7;
+    border-bottom: #2E4053 1px solid;
+    border-radius: 1rem;
+    text-align: center;
+    padding: 0.25rem;
+    width: 135px;
+    font-weight: bold;
+    font-size: smaller;
+}
+
 
 #info-difficulty {
     text-transform: uppercase;
