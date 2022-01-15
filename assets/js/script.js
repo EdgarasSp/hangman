@@ -79,7 +79,6 @@ function randomWord() {
   } else {
     console.log(`unknown game type`);
   }
-  console.log(word);
 }
 
 function checkGuess(chosenLetter) {
@@ -119,12 +118,12 @@ let timeRemainingHard = 4;
 function gameTimer() {
   let gameTime = document.getElementById('info-timer');
   if (gameType === "medium") {
-    let timer = setInterval(function() {
+    timer = setInterval(function() {
       timeRemainingMed -= 1;
       gameTime.innerHTML = timeRemainingMed;
-      checkGameEnd();
+      checkGameEnd();  
       if (timeRemainingMed === 0) {
-        clearInterval(timer);        
+        clearInterval(timer);   
       }
     },1000);
   } else if (gameType === "hard") {
@@ -157,11 +156,11 @@ function gameRestart() {
   guessed = [];
   currentScore = 0;
   timerReset();
+  gameTimer ();
   randomWord();
   guess();
   generateLives();
   generateButtons();
-  gameTimer ();
   scoreReset ();
   document.getElementById('game-menu').hidden = false;
  }

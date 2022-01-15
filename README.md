@@ -31,14 +31,14 @@
 # **1. Introduction**
 > ##### [Table of Content](#table-of-contents)
 
-This game is a simple, more ethnical version of the original hangman game. The purpose of this the game design is to all minors to experiencing a word guessing game without need to be exposed to hanging idea.
+This game is a simple, more ethnical version of the original hangman game. The purpose of this game design is to be more sensible and inclusive for younger players. Let them experience the word guessing game without need to be shown the concept of hanging by drawing.
 
-Game host three levels of difficultly, all players have 8 lives/wrong guesses regardless of the level, medium and hard levels add new level of urgency by increasing the word letter count requiring more guesses and introducing a timer function. Timer function limits the time player has available to them to make the letter guessing decision before games timer runs out resulting in game over.
+Game host three levels of difficultly, all players have 8 lives/wrong guesses regardless of the level, medium and hard levels add an additional level of urgency by introducing a timer function and furthermore increasing the length of the words. The timer function limits the time player has available to them to make the guess before the games timer runs out, resulting in game over.
 
-In addition, game runs a built in score function to encourage player to to get the perfect score of  60,80 and 120 points based on the difficulty setting.
+In addition, game runs a built in score function to encourage player to to get the perfect score of 60,80 and 120 points based on the difficulty setting.
 
-To test your skills or try to beat the highes score, please use the following link: [HANGMAN](https://edgarassp.github.io/hangman/) game!   
-To review the code, please use the following link: [EdgarasSp GitHub](https://github.com/EdgarasSp/hangman) repository.
+To test your skills or to beat the highest score, please use the following link to play the [HANGMAN](https://edgarassp.github.io/hangman/) game!   
+To view the code, please use the following link: [EdgarasSp GitHub](https://github.com/EdgarasSp/hangman) repository.
 <br>
 
 # **2. Initial Development** 
@@ -68,7 +68,7 @@ To review the code, please use the following link: [EdgarasSp GitHub](https://gi
 ### **Customer UX Requirement Solution:**
 1. To play the word guessing game:
 
-	Play can initiate the game from the main menu page. When the current game ends, user will also be prompted to confirm if they would like to return to the main menu or restart game with the current set difficulty.
+	Play can initiate the game from the main menu page. When the current game ends, user will also be prompted to confirm if they would like to return to the main menu or restart the game with same difficulty.
 
 2. To track game score:
 
@@ -76,14 +76,14 @@ To review the code, please use the following link: [EdgarasSp GitHub](https://gi
 
 3. Change games difficulty levels:
 
-	Player will have 3 difficulty options to choose from in the main menu, player can decide which game to play by reading listed games parameters.
+	In the main menu, player has 3 difficulty options to choose from. Parameters for each game mode provided in the game card just above start game button.
 
-    When game has been started, player will have option to return to the main menu to change the difficulty at any time by using "Menu" button located at the bottom rights side of the page.
+    When game is running, player has an option to return to the main menu should they wish to change the difficulty at any time. Using "Menu" button located at the bottom rights side of the page will direct player to the main page.
 
 
 4. Reset the game or return to the menu.
 
-    After each successful or unsuccessful game played, player will be prompted to restart the current game or return to the menu to change the difficulty.
+    After each successful or unsuccessful game played, player ise prompted to restart the current game or return to the menu to change the difficulty.
     
 ## **2.2. Build**
 
@@ -142,21 +142,21 @@ Icon List:
    <a href="https://imgur.com/Mezpati"><img src="https://i.imgur.com/Mezpati.png" title="source: imgur.com/EdgarasSp" /></a>
 <br>
 
-* __Game Rules__ - For ease of use, game rules have been outline immediately when website loads, in plain sight.
+* __Game Rules__ - For ease of use, game rules outline in plain sight, immediately after website loads.
 
-* __Game Modes__ - Players have 3 difficulties to choose from. Differences      between the games have been outlined in each individual game mode tile.
+* __Game Modes__ - Players have 3 difficulties to choose from, differences      between the games modes are outlined in each individual game mode card.
 
 ## **3.2. Game Page**
 
-Home page designed to provide a snippet of what is available on the website. There are distinct line brakes for each section and responsive navbar and footer for assisted navigation.
+ Game page has a simple design to help with accessability.
 
 <a href="https://imgur.com/zXhPtVC"><img src="https://i.imgur.com/zXhPtVC.png" title="source: imgur.com/EdgarasSp" /></a>
 
-* __Info-Bar__ - Info-bar at the top of the game window, show key information such as players score (+10 for correct answer and -5 for the wrong answer). Timer which is used when medium or hard game has been selected to visually show the count down. Lastly game difficulty confirmation noted in th top right corner.
+* __Info-Bar__ - Info-bar located at the top of the game window, it displays the key information for player, such as score (+10 for correct answer and -5 for the wrong answer). Timer which is used within medium or hard game modes to visually show the count down. Lastly game difficulty confirmation noted in th top right corner.
 
 * __Lives__ - Each player has 8 lives/guesses, each remaining guess displayed as solid core heart and each incorrect answer will replace the solid core heart with hollow heart. Once all the hearts are out, game will end. The correctly guessed letters will be displayed on the guess word box underneath the lives.
 
-* __Keyboard__ - Player requires to use on screen keyboard, each guess will be recorded, check against the answer and if correct, key pressed will be coloured in green and each incorrect guess will be marked in dark pink color. Once the letter has been picked, regardless of the guess state, that key will be disabled and no longer be clickable.
+* __Keyboard__ - Player requires to use on screen keyboard, each guess will be recorded, check against the answer and if correct guess, said key pressed will be coloured in green and each incorrect guess will be marked in dark pink color. Once the letter has been guessed, regardless of the guess state, that key will be disabled and no longer be clickable.
 
 * __Back Button__ - At any time player has option to return to the main menu.
 
@@ -174,18 +174,21 @@ Home page designed to provide a snippet of what is available on the website. The
 
 ## **4.1. Bugs and Fixes**
 
-1.  On click function did not work, after some research and troubleshooting identified that I have typed   ``` onclick="href='/pages/order.html' ``` instead of ```onclick="location.href='/pages/order.html' ```
+1. Having two HTML page, I  needed to store a variable in memory. Originally added script directly inside index.html page but received below error.
 
-    Corrected code snippet below:
+    <a href="https://imgur.com/EBmgUTK"><img src="https://i.imgur.com/EBmgUTK.png" title="source: imgur.com" /></a>
+    <a href="https://imgur.com/L60kR8b"><img src="https://i.imgur.com/L60kR8b.png" title="source: imgur.com" /></a>
 
-    ```html
-    <section id="banner-container">
-                <div id="banner-image"></div>
-                <div class="vertical-center-button">
-                    <input type="button" onclick="location.href='/pages/order.html'" class="shop-button" value="Shop Now" >
-                </div>
-            </section>
-    ```
+    To resolve, had to move script to a separate .js file in link to it in both HTML pages.
+
+2. After publishing site to GitHub Pages noted that when in mobile view and rotating landscape, approximately 300px  from the top become unaccessible by the scroll bar.
+
+    <a href="https://imgur.com/DfdtvQm"><img src="https://i.imgur.com/DfdtvQm.png" title="source: imgur.com" /></a>
+
+    This was caused due to setting the main container to position absolute, once fixed and correct margin set, issue has been resolved.
+
+    <a href="https://imgur.com/8dwMBME"><img src="https://i.imgur.com/8dwMBME.png" title="source: imgur.com" /></a>
+
 
 ## **4.2. Integrity**
 
@@ -310,7 +313,7 @@ The Code Institute provided a [template](https://github.com/Code-Institute-Org/g
 You will need to have a [GitHub ](https://github.com) account and it is advised to install the [GitPod Chrome Extension](https://www.gitpod.io/docs/browser-extension/). To clone the project into your own repository follow the below steps :
 
 1. Log in to your [GitPod account](https://gitpod.io/) .
-2. Open the [Project Repository](https://github.com/EdgarasSp/Mariana_Bakehouse) in a new tab.
+2. Open the [Project Repository](https://github.com/EdgarasSp/hangman) in a new tab.
 3. Click on the green "GitPod" button to the top right of the project.
 4. This will automatically create a new GitPod workspace for you to work on.
 5. You can type in any name of your choosing.
@@ -332,6 +335,5 @@ Website was created using code taught by Code Institute during second module, to
 
 <br>
 
-The content of this Website is for educational purposes only. 
--
-This website has been created for a fictional bakery and all information supplied within the site is fictional. Please do not use any information including dietary information in real life applications.
+The content of this Website/game is for educational purposes only. 
+
