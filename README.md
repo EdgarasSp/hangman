@@ -1,4 +1,4 @@
-<a href="https://imgur.com/J3aHiWB"><img src="https://i.imgur.com/J3aHiWB.png" title="source: imgur.com/EdgarasSp" /></a>
+<a href="https://imgur.com/6WtrGFQ"><img src="https://i.imgur.com/6WtrGFQ.png" title="source: imgur.com" /></a>
 
 # HANGMAN
 
@@ -139,7 +139,7 @@ Icon List:
 ## **3.1. Menu Page**
 
     
-   <a href="https://imgur.com/Mezpati"><img src="https://i.imgur.com/Mezpati.png" title="source: imgur.com/EdgarasSp" /></a>
+   <a href="https://imgur.com/f0MJlt0"><img src="https://i.imgur.com/f0MJlt0.png" title="source: imgur.com" /></a>
 <br>
 
 * __Game Rules__ - For ease of use, game rules outline in plain sight, immediately after website loads.
@@ -150,7 +150,7 @@ Icon List:
 
  Game page has a simple design to help with accessability.
 
-<a href="https://imgur.com/zXhPtVC"><img src="https://i.imgur.com/zXhPtVC.png" title="source: imgur.com/EdgarasSp" /></a>
+<a href="https://imgur.com/zIdGFH0"><img src="https://i.imgur.com/zIdGFH0.png" title="source: imgur.com" /></a>
 
 * __Info-Bar__ - Info-bar located at the top of the game window, it displays the key information for player, such as score (+10 for correct answer and -5 for the wrong answer). Timer which is used within medium or hard game modes to visually show the count down. Lastly game difficulty confirmation noted in th top right corner.
 
@@ -161,7 +161,7 @@ Icon List:
 * __Back Button__ - At any time player has option to return to the main menu.
 
 
- <a href="https://imgur.com/dEzbZsb"><img src="https://i.imgur.com/dEzbZsb.png" title="source: imgur.com" /></a>
+ <a href="https://imgur.com/BavRlhB"><img src="https://i.imgur.com/BavRlhB.png" title="source: imgur.com" /></a>
 
 * __Gave Over Message__ Once the game ends, game will show game status message, either won or lost. If lost the word will be displayed.
 
@@ -228,7 +228,7 @@ To test performance, used to primary tools:
 
 * [www.responsinator.com](https://www.responsinator.com/?url=https%3A%2F%2Fedgarassp.github.io%2Fhangman%2Findex.html)
 
-    <a href="https://imgur.com/C8DiSuO"><img src="https://i.imgur.com/C8DiSuO.png" title="source: imgur.com/EdgarasSp" /></a>
+    <a href="https://imgur.com/03VWbp6"><img src="https://i.imgur.com/03VWbp6.png" title="source: imgur.com" /></a>
 
 
 ### **4.2.2. Links**
