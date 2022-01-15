@@ -25,9 +25,6 @@
 &nbsp;&nbsp;&nbsp; [6.2. Cloning on GitHub](#62-cloning-on-github)  
 [7. Credits](#7-credits)    
 &nbsp;&nbsp;&nbsp; [7.1. Code](#71-code)  
-&nbsp;&nbsp;&nbsp; [7.2. Images](#72-images)  
-&nbsp;&nbsp;&nbsp; [7.3. Media](#73-media)  
-&nbsp;&nbsp;&nbsp; [7.4. Content](#74-content)    
 [8. Disclaimer](#8-disclaimer)
 
 
@@ -239,26 +236,9 @@ To test performance, used to primary tools:
     <a href="https://imgur.com/1gnL6GD"><img src="https://i.imgur.com/1gnL6GD.png" title="source: imgur.com" /></a>
 
 
-* [Chrome DevTools](https://developer.chrome.com/docs/devtools/)
-
-    > **PLEASE NOTE!** Due to bug with the responsive view accessed via "Inspect" then "Toggle Device Toolbar" the media queries were tested without using this option. Also, bug was reported to Code Institute, who confirmed that there was a discrepancy with breakpoints not being displayed correctly. Please do not test responsiveness via this tool, please resize the window instead.
-
-    <a href="https://imgur.com/hzIycZo"><img src="https://i.imgur.com/hzIycZo.png" title="source: imgur.com" /></a>
-
-
-
 ### **4.2.2. Links**
 
 Links tested:            
-
-*   Nav-Bar & Footer
-    * "LOGO" to "HOME PAGE" = **Validated**
-    * "NAV-BAR" to action, navigate "PAGES"= **Validated**
-    * "FACEBOOK" to action, open "www.facbook.com" = **Validated**
-    * "TWITTER" to action, open "www.twitter.com" = **Validated**
-    * "INSTAGRAM" to action, open "www.instagram.com" = **Validated**
-    * "SUBSCRIBE" to action, "Submit" form = **Validated**
-    * "QUICK LINKS" to action, navigate "PAGES"= **Validated**
 
 *   Home Page:
     * "SHOP NOW" to "ORDER PAGE" = **Validated**
@@ -266,33 +246,15 @@ Links tested:
     * "CONTACT US" action "Submit" form = **Validated**
     * "SEND MESSAGE" action, "Submit" form = **Validated**
 
-*   Order Page:
+*   Game Page:
     * "SUBMIT YOU ORDER" action, "Submit" form = **Validated**
 
-*   Contact Page:
-    * "SEND MESSAGE" action, "Submit" form = **Validated**
-    * "FACEBOOK" to action, open "www.facbook.com" = **Validated**
-    * "TWITTER" to action, open "www.twitter.com" = **Validated**
-    * "INSTAGRAM" to action, open "www.instagram.com" = **Validated**
+### **4.2.3. functions**
 
-
-### **4.2.3. Forms**
-
-Forms tested:            
+Functions tested:            
 
 *   Nav-Bar & Footer
     * "SUBSCRIBE" all data fields submit correctly, confirmed by Coding Institute confirmation page = **Validated**
-
-
-*   Home Page:
-    * "CONTACT US" all data fields submit correctly, confirmed by Coding Institute confirmation page = **Validated**
-
-*   Order Page:
-    * "SUBMIT YOU ORDER" all data fields submit correctly, confirmed by Coding Institute confirmation page = **Validated**
-
-*   Contact Page:
-    * "SEND MESSAGE" all data fields submit correctly, confirmed by Coding Institute confirmation page = **Validated**
-
 
 ## **4.3. Build**
 
@@ -300,32 +262,19 @@ Forms tested:
 
 A lighthouse report was run for each page on the deployed github page, results below:
 
-* **Home Page**
+* **Menu Page**
 
     <a href="https://imgur.com/oBc2qn0"><img src="https://i.imgur.com/oBc2qn0.png" title="source: imgur.com" /></a> 
 
-* **Order Page**
+* **Game Page Active**
 
     <a href="https://imgur.com/giDnCfD"><img src="https://i.imgur.com/giDnCfD.png" title="source: imgur.com" /></a>
 
-* **Contact Page**
+* **Game Page not-Active**
 
     <a href="https://imgur.com/Y2Wrrj4"><img src="https://i.imgur.com/Y2Wrrj4.png" title="source: imgur.com" /></a>
 
-* **Gallery Page**
 
-    <a href="https://imgur.com/4i2DXLe"><img src="https://i.imgur.com/4i2DXLe.png" title="source: imgur.com" /></a>
-
-
-
-### **4.3.2. Optimisation**
-
-All images used in the site were compressed using [compressor.io](https://compressor.io/) to increase site performance. 
-
-*   Original combined image file size was: **37.5MB**
-*   Compressed combined image file size now is: **4.29MB**
-
-Using built in Chrome performance testing tool **Litehouse** the score for performance increased from 16 points to 70 points average.
 
 # **5. Road Map**
 > ##### [Table of Content](#table-of-contents)
@@ -360,17 +309,17 @@ There are 2 non-essential features to implement in the future:
 
 ## **6.1. Deployment to GitHub**
 
-The project was developed using [GitPod](https://gitpod.io/), pushed to [GitHub Repository](https://github.com/EdgarasSp/Mariana_Bakehouse) and deployed via GitHub pages. The steps to deploy outlined below:
+The project was developed using [GitPod](https://gitpod.io/), pushed to [GitHub Repository](https://github.com/EdgarasSp/hangman) and deployed via GitHub pages. The steps to deploy outlined below:
 
 
 The Code Institute provided a [template](https://github.com/Code-Institute-Org/gitpod-full-template) which was cloned and used for the main structure of the repository, then created into a GitPod repository. To achieve the above, the below process can be followed for deployment:
 
-1. Go to the [GitHub Repository](https://github.com/EdgarasSp/Mariana_Bakehouse) home page.
+1. Go to the [GitHub Repository](https://github.com/EdgarasSp/hangman) home page.
 2. Click "Settings" in the ribbon of links below the title of the project.
 3. Click "Pages" on the side bar.
 4. Select "Branch: main" where it asks for the source.
 5. Hit "Save" and wait for a few minutes.
-6. Refresh the page and click the green link with the deployed page [deployed page](######).
+6. Refresh the page and click the green link with the deployed page [deployed page](https://edgarassp.github.io/hangman/).
 
 ## **6.2. Cloning on GitHub**
 
@@ -390,44 +339,10 @@ You will need to have a [GitHub ](https://github.com) account and it is advised 
 
 Website was created using code taught by Code Institute during first module, to help with some difficulties below sites were used:
 
-* __W3 Schools__ - To research both HTML and CSS, key areas were position absolute and relative, flex boxes and units of measure. 
+* __W3 Schools__ - To research both HTML, CS and JavaScript, key areas were javaScript loop examples. 
 
 * __Stack Overflow__ - To research answers to a queries to help me to understand the reasons behind the implementation and to help understand troubleshooting process.
 
-
-## **7.2. Images** 
-
-All image files used to create the website were under [Pexels](https://www.pexels.com/) "Free to use" license.
-
-| Page | Use | Website | Name |  Source | Photographer |  
-| :----- | :----- | :----- | :----- | :----- | :----- | 
-| Home | Cover | [Pexels](https://www.pexels.com/) | pexels-rachel-claire-5490820_modified.jpg | [Image](https://www.pexels.com/photo/crispy-baguettes-in-wooden-box-in-counter-of-cafe-5490820/) | [Rachel Claire](https://www.pexels.com/@rachel-claire) |
-| Home | Featured 1 | [Pexels](https://www.pexels.com/) | caramel_coconut_cake.jpg | [Image](https://www.pexels.com/photo/plate-of-cake-with-chocolate-frosting-2680603/) | [Anna Tukhfatullina](https://www.pexels.com/@myfoodie) |
-| Home | Featured 2 | [Pexels](https://www.pexels.com/) | honey_yougurt_cake.jpg | [Image](https://www.pexels.com/photo/cake-on-white-tray-2684556/) | [Anna Tukhfatullina](https://www.pexels.com/@myfoodie) |
-| Home | Featured 3 | [Pexels](https://www.pexels.com/) | almond_croissant.jpg | [Image](https://www.pexels.com/photo/close-up-photo-of-croissants-on-white-plate-1775037/) | [Mariana Kurnyk](https://www.pexels.com/@mariana-kurnyk-844465) |
-| Home | Featured 4 | [Pexels](https://www.pexels.com/) | chocolate_brownie.jpg | [Image](https://www.pexels.com/photo/close-up-photo-of-stacked-brownies-3026804/) | [Ella Olsson](https://www.pexels.com/@ella-olsson-572949) |
-| Home | Special | [Pexels](https://www.pexels.com/) | TBC | [Image](TBC) | [TBC](TBC) |
-| Home | Form | [Pexels](https://www.pexels.com/) | open_sign.jpg | [Image](https://www.pexels.com/photo/lady-employee-in-cafeteria-with-sign-open-6205476/) | [Tim Douglas](https://www.pexels.com/@tim-douglas) |
-
-
-## **7.3. Media**
-All media files used to create the website were under [Pexels](https://www.pexels.com/) "Free to use" license.
-
-| Page | Use | Website | Name | Source | Creator |  
-| :----- | :----- | :----- | :----- | :----- | :----- | 
-| Home | About | [Pexels](https://www.pexels.com/) | cake_slicing_video.mp4 | [Video](https://www.pexels.com/video/piece-of-white-cake-7550991/) | [Anna Nekrashevich](https://www.pexels.com/@anna-nekrashevich) |
-
-## **7.4. Content**
-
-Placeholder Text
-
-## **7.4.1. Text**
-
-Placeholder Text
-
-## **7.4.2 Proof-Read**
-
-Placeholder Text
 
 # **8. Disclaimer**
 > ##### [Table of Content](#table-of-contents)

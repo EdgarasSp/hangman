@@ -4,7 +4,6 @@
     margin: 0;
 }
 
-
 h1 {
     color: rgb(63, 28, 145);
     text-align: center;
@@ -26,14 +25,12 @@ h1:before, h1:after {
 
 body {
     background-color:#05386b;
-
 }
 
 /* fixed game window parameters */
 
 #main-container {
     background-color: #e0c0db;
-    /* border: 1px solid black; */
     border-radius: 3rem;
     position: relative;
     margin-top: 320px;
@@ -43,7 +40,6 @@ body {
     top: 50%;
     -webkit-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
-
 }
 
 /* Menu */
@@ -64,7 +60,6 @@ h3 {
     text-align: center;
     margin: 0% 5% 2% 5%;
     width: 90%;
-    /* border-top: #2E4053 1px solid; */
     border-bottom: #2E4053 1px solid;
 }
 
@@ -74,8 +69,8 @@ h3 {
     text-align: center;
     margin-bottom: 10px;
     color: #2E4053;
-    
 }
+
 #instructions .justify{
     text-align: justify;
 }
@@ -111,7 +106,6 @@ h3 {
     display:flex;
     text-align: center;
     flex-direction: column;
-    
 }
 
 .cards ul li {
@@ -138,7 +132,6 @@ h3 {
     flex-direction: row;
     justify-content: space-between; 
     padding: 1.5rem;
-    /* border: red 1px solid; */
 }
 
 .info-bar {
@@ -149,7 +142,7 @@ h3 {
     padding: 0.25rem;
     width: 135px;
     font-weight: bold;
-    font-size: 1.5;
+    font-size: 1.5rem;
 }
 
 
@@ -197,8 +190,6 @@ li {
 
 #word-random {
     font-size: 3rem;
-    /* padding: 2rem; */
-    
 }
 
 /* Keyboard*/
@@ -237,14 +228,10 @@ li {
         transform 0.08s ease,
         background-color 0.08s ease,
         box-shadow 0.08s ease;
-    
 }
 
 .keys a {
     position: absolute;
-    /* top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%); */
     text-align: center;
     margin-left: -1px;
     margin-top: 1px;
@@ -259,11 +246,6 @@ li {
         inset 2px 3px 0px #e0c0db,
         inset 1px 1px 1px 0px #fff,
         1px 1px 1px 0px #e0c0db;
-
-        /* inset 2px 3px 0px #818181,
-        inset 1px 1px 1px 0px #fff,
-        1px 1px 1px 0px #7a7a7a; */
-
 }
 .gameEndButtons:active{
     box-shadow: 
@@ -276,7 +258,6 @@ li {
         transform 0.08s ease,
         background-color 0.08s ease,
         box-shadow 0.08s ease;
-
 }
 .keys a:active{
     padding-top: 2px;
@@ -296,7 +277,6 @@ li {
 /* Random Letter Generator */
 
 #letter-random {
-    /* border:  royalblue 1px solid; */
     height: 7rem;
     text-align: center;
     padding-top: 1rem;
@@ -315,9 +295,6 @@ li {
     display:inline-block;
     text-align: right;
     width: 100%;
-    /* border: blue 1px solid; */
-    
-    /* border: red 1px solid; */
 }
 
 #game-menu {
@@ -330,16 +307,11 @@ li {
     text-transform: uppercase;
     text-align: center;
     font-size: 1.75rem;
-    
-    /* letter-spacing: 0.5rem; */
 }
 
 #back-menu #game-menu:hover {
-    /* background-color: rgb(63, 28, 145); */
-    /* color: #f7f7f7; */
     border: 1.5px rgb(63, 28, 145) solid;
     color: rgb(63, 28, 145);
-    text-transform: bold;
     font-weight: bolder;
         
 }
@@ -382,14 +354,6 @@ li {
     color: #943126;
 }
 
-/* @media screen and (max-width: 1024px) {
-
-}
-
-@media screen and (max-width: px) {
-
-} */
-
 @media screen and (max-width: 600px) {
 
     #main-container {
@@ -421,7 +385,6 @@ li {
 
     .cards {
         width:100%;
-        /* min-width: 319px; */
         height: 80px;
         margin-bottom: 20px;
         align-items: center;
@@ -520,10 +483,6 @@ li {
         width:90%;
         min-width: 280px;
         height: 600px;
-        /* left: 10%;
-        top: 10%;
-        -webkit-transform: translate(-10%, -10%);
-        transform: translate(-5%, -10%); */
     }
 
     h1 {

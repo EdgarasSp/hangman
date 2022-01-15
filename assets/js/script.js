@@ -10,19 +10,6 @@ document.addEventListener("DOMContentLoaded", function() {
   }
 });
 
-document.addEventListener("DOMContentLoaded", function() {
-    let keyboard = document.getElementsByClassName("keys");
-    
-    for (let keys of keyboard) {
-        keys.addEventListener("click", function() {
-            let keyPressed = this.getAttribute("data-type");
-            // alert(`Key: ${keyPressed} Pressed`);
-        })
-    }
-});
-
-
-
 // Retrieves from memory selected game type from index.html
 var gameType = localStorage.getItem("gameSelection");
 // declare var
@@ -72,8 +59,7 @@ function runGame (gameType){
   randomWord();
   guess();
   difficulty ();  
-  // gameStatus ();
-  if (document.URL.includes("game.html")) {
+    if (document.URL.includes("game.html")) {
     gameTimer ();
   }
 }
@@ -112,7 +98,7 @@ function checkGuess(chosenLetter) {
     updateLives()
     incrementIncorrectScore();
     document.getElementById(chosenLetter).style.backgroundColor = '#ad8ba8';
-    checkGameEnd ();    
+    checkGameEnd ();
   }
 }
 
@@ -125,11 +111,6 @@ function guess() {
 function difficulty () {
   document.getElementById('info-difficulty').innerHTML = gameType;
 };
-
-
-
-// TBC function randomLetter (){}
-// TBC function displayRandomLetter () {}
 
 
 let timeRemainingMed = 6;
@@ -175,18 +156,15 @@ function gameRestart() {
   mistakeCount = 0;
   guessed = [];
   currentScore = 0;
-  timerReset()
+  timerReset();
   randomWord();
-  guess()
+  guess();
   generateLives();
   generateButtons();
-  gameTimer ()
-  scoreReset ()
-  document.getElementById('letter-random').hidden = true; // hidden until feature implemented
-  document.getElementById('action-status').hidden = true; // hidden until feature implemented
+  gameTimer ();
+  scoreReset ();
   document.getElementById('game-menu').hidden = false;
-
-}
+ }
 
 // function scoreTracker () {
 
@@ -225,8 +203,6 @@ function checkGameEnd () {
         <button id="returnMenu" class="gameEndButtons" onclick="location.href='./index.html'" <span>Menu</span></button>
         </div>
     </div>`;
-    document.getElementById('letter-random').hidden = true;
-    document.getElementById('action-status').hidden = true;
     document.getElementById('game-menu').hidden = true;
   } else if (mistakeCount === 8) {
     document.getElementById('info-timer').innerHTML = "-";
@@ -239,8 +215,6 @@ function checkGameEnd () {
         </div>
     </div>`;
     document.getElementById('word-random').innerHTML = word;
-    document.getElementById('letter-random').hidden = true;
-    document.getElementById('action-status').hidden = true;
     document.getElementById('game-menu').hidden = true;
   } else if (gameType !== "easy") {
       if ((document.getElementById("info-timer").innerText) === "0") {
@@ -254,8 +228,6 @@ function checkGameEnd () {
             </div>
         </div>`;
         document.getElementById('word-random').innerHTML = word;
-        document.getElementById('letter-random').hidden = true;
-        document.getElementById('action-status').hidden = true;
         document.getElementById('game-menu').hidden = true;
 
     }
