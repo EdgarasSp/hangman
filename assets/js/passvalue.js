@@ -12,7 +12,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 window.location.href='game.html';
                 console.log(gameTypeSelected);
             } 
-        })
+        });
     }
 });
 

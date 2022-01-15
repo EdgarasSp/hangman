@@ -141,7 +141,7 @@ h3 {
     padding: 0.25rem;
     width: 135px;
     font-weight: bold;
-    font-size: 1.5rem;
+    font-size: 1.25rem;
 }
 
 
@@ -442,6 +442,7 @@ li {
 
     .info-bar {
         width: auto;
+        font-size: 1.5rem;
     }
 
     
@@ -455,7 +456,6 @@ li {
         font-size: 20px;
         justify-content:center;
         margin-bottom: 20px;
-
     }
 
     li {
@@ -561,6 +561,7 @@ li {
 
     .info-bar {
         width: auto;
+        font-size: 1.5rem;
     }
 
     #game-selected{

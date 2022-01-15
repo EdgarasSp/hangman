@@ -138,45 +138,35 @@ Icon List:
 
 ## **3.1. Menu Page**
 
-* __Logo__ - Each page displays a company logo. Logo uses same dominant color for consistency, also when clicked on, it will direct user back to the home page for ease of navigation.
-
-	<a href="https://imgur.com/ZqvqHOb"><img src="https://i.imgur.com/ZqvqHOb.png" title="source: imgur.com - Logo" /></a>
-
+    
+   <a href="https://imgur.com/Mezpati"><img src="https://i.imgur.com/Mezpati.png" title="source: imgur.com/EdgarasSp" /></a>
 <br>
 
-* __Navbar__ - Navigation bar show on every page position in the center of the page for ease of use. Designed in this way to provide an intuitive way to navigate to other pages within the websites. 
+* __Game Rules__ - For ease of use, game rules have been outline immediately when website loads, in plain sight.
 
-	Navbar has interactive features, such as hover over feature which set text to display in bold, and when user clicks on the navigational link, relative navbar tab will display in Bold telling user which page they are currently browsing.
-
-	<a href="https://imgur.com/lUzja8a"><img src="https://i.imgur.com/lUzja8a.png" title="source: imgur.com - Navbar" /></a>
-
-<br>
-
-* __Footer__ - Footer was designed to include 3 key sections, social, subscribe to the newsletter and supporting navigational links. Footer is show on all pages to create a consistent look and feel.
-
-	* To the left, listed social accounts Facebook, Twitter and Instagram account, each text hyperlinked to the relative site.
-	* In the center, user has option to subscribe to the newsletter and choose frequency weekly or monthly.
-	* To the right, listed navigational links to help users to navigate to other pages without a need to return to the top of the page.
-
-	<a href="https://imgur.com/9Xdeyo6"><img src="https://i.imgur.com/9Xdeyo6.png" title="source: imgur.com" /></a>
+* __Game Modes__ - Players have 3 difficulties to choose from. Differences      between the games have been outlined in each individual game mode tile.
 
 ## **3.2. Game Page**
 
 Home page designed to provide a snippet of what is available on the website. There are distinct line brakes for each section and responsive navbar and footer for assisted navigation.
 
+<a href="https://imgur.com/zXhPtVC"><img src="https://i.imgur.com/zXhPtVC.png" title="source: imgur.com/EdgarasSp" /></a>
 
-* __Cover Image__ - Added to indicate clearly the purpose for the site, image showing bakery products and company name. Additionally cover page has "SHOP NOW" button for user to navigate directly to the "ORDER" page.
+* __Info-Bar__ - Info-bar at the top of the game window, show key information such as players score (+10 for correct answer and -5 for the wrong answer). Timer which is used when medium or hard game has been selected to visually show the count down. Lastly game difficulty confirmation noted in th top right corner.
 
-* __Featured Products__ - Section added to provide a quick way to see and view the most favourite products supplied by the bakery. Button "ORDER" added to each product redirecting user to the "ORDER" page and hover over will display product details.
+* __Lives__ - Each player has 8 lives/guesses, each remaining guess displayed as solid core heart and each incorrect answer will replace the solid core heart with hollow heart. Once all the hearts are out, game will end. The correctly guessed letters will be displayed on the guess word box underneath the lives.
 
-* __Special Orders__ - Section added to indicate that special orders are accepted and allow user quickly navigate to the necessary page to place an order. Button "CONTACT US" was added, when user clicks user will be redirected to the "CONTACT" page where they can place the special order using the form provided.
+* __Keyboard__ - Player requires to use on screen keyboard, each guess will be recorded, check against the answer and if correct, key pressed will be coloured in green and each incorrect guess will be marked in dark pink color. Once the letter has been picked, regardless of the guess state, that key will be disabled and no longer be clickable.
 
-* __About "Snippet"__ - Section added to give a quick description about the bakery. A complimentary video added showcasing a cake being sliced to encourage a positive emotion and food cravings.
+* __Back Button__ - At any time player has option to return to the main menu.
 
-* __"Quick" Contact__ - Section added to give a method to send a message to the bakery without a need to navigate to the "CONTACT" page. Message can be sent directly from the "Home" page using the form provided and submitting by pressing button "SEND MESSAGE".
 
-* __Feedback__ - Section added to provide feedback received from the existing customers to reassure new customers about the quality of the product produced by the bakery. Feedback has been received using the "CONTACT" form and not via 3rd party review application or websites.
+ <a href="https://imgur.com/dEzbZsb"><img src="https://i.imgur.com/dEzbZsb.png" title="source: imgur.com" /></a>
 
+* __Gave Over Message__ Once the game ends, game will show game status message, either won or lost. If lost the word will be displayed.
+
+* __Restart & Menu Buttons__ - Buttons to restart the game and return to home have been implemented to create more fluid experience. PLayer can reset the game to the same game mode or return to the main menu and choose different game mode.
+   
 
 # **4. Testing**
 > ##### [Table of Content](#table-of-contents)
@@ -199,41 +189,43 @@ Home page designed to provide a snippet of what is available on the website. The
 
 ## **4.2. Integrity**
 
-HTML and CSS build was tested through the [W3C Validator](https://validator.w3.org/#validate_by_upload+with_options) .HTML file, and the CSS through [W3C JigSaw Validator](http://jigsaw.w3.org/css-validator/#validate_by_upload) .css file.
+HTML and CSS build was tested through the [W3C Validator](https://validator.w3.org/#validate_by_upload+with_options) .HTML file, CSS through [W3C JigSaw Validator](http://jigsaw.w3.org/css-validator/#validate_by_upload) .css file. Lastly, JavaScript through [jshint.com Validator](https://jshint.com/).
+
 
 **All pages have passed with no errors**
 
 * W3C Validator
     * **index.html**
 
-        <a href="https://imgur.com/7BCfXup"><img src="https://i.imgur.com/7BCfXup.png" title="source: imgur.com" /></a>
+        <a href="https://imgur.com/EoUVrwS"><img src="https://i.imgur.com/EoUVrwS.png" title="source: imgur.com/EdgarasSp" /></a>
 
-    * **order.html**
+    * **game.html**
 
-        <a href="https://imgur.com/eVq5ZXk"><img src="https://i.imgur.com/eVq5ZXk.png" title="source: imgur.com" /></a>
-
-    * **contact.html**
-
-        <a href="https://imgur.com/q0t1XqN"><img src="https://i.imgur.com/q0t1XqN.png" title="source: imgur.com" /></a>
-
-    * **gallery.html**
-
-        <a href="https://imgur.com/uenPFCQ"><img src="https://i.imgur.com/uenPFCQ.png" title="source: imgur.com" /></a>
+        <a href="https://imgur.com/Jm5xbnO"><img src="https://i.imgur.com/Jm5xbnO.png" title="source: imgur.com/EdgarasSp" /></a>
 
 * W3C JigSaw Validator
 
     * **style.css**
 
-        <a href="https://imgur.com/ZLjR2Ww"><img src="https://i.imgur.com/ZLjR2Ww.png" title="source: imgur.com" /></a>
+        <a href="https://imgur.com/WBeAtJ8"><img src="https://i.imgur.com/WBeAtJ8.png" title="source: imgur.com/EdgarasSp" /></a>
 
+* jshint.com Validator
+
+    * **script.js**
+
+        <a href="https://imgur.com/8uNiSLG"><img src="https://i.imgur.com/8uNiSLG.png" title="source: imgur.com/EdgarasSp" /></a>
+
+    * **passvalue.js**
+
+        <a href="https://imgur.com/II8Q3sF"><img src="https://i.imgur.com/II8Q3sF.png" title="source: imgur.com/EdgarasSp" /></a>
 
 ### **4.2.1. Responsiveness**
 
 To test performance, used to primary tools:
 
-* [www.responsinator.com](https://www.responsinator.com/?url=https%3A%2F%2Fedgarassp.github.io%2FMariana_Bakehouse%2Findex.html)
+* [www.responsinator.com](https://www.responsinator.com/?url=https%3A%2F%2Fedgarassp.github.io%2Fhangman%2Findex.html)
 
-    <a href="https://imgur.com/1gnL6GD"><img src="https://i.imgur.com/1gnL6GD.png" title="source: imgur.com" /></a>
+    <a href="https://imgur.com/C8DiSuO"><img src="https://i.imgur.com/C8DiSuO.png" title="source: imgur.com/EdgarasSp" /></a>
 
 
 ### **4.2.2. Links**
@@ -241,20 +233,16 @@ To test performance, used to primary tools:
 Links tested:            
 
 *   Home Page:
-    * "SHOP NOW" to "ORDER PAGE" = **Validated**
-    * "ORDER" 4x to "ORDER PAGE" = **Validated**
-    * "CONTACT US" action "Submit" form = **Validated**
-    * "SEND MESSAGE" action, "Submit" form = **Validated**
+    * "EASY GAME" to "GAME PAGE" = **Validated**
+    * "MEDIUM GAME" to "GAME PAGE" = **Validated**
+    * "HARD GAME" "GAME PAGE" = **Validated**
+    
 
 *   Game Page:
-    * "SUBMIT YOU ORDER" action, "Submit" form = **Validated**
+    * "KEY BUTTONS" action, "Guess" = **Validated**
+    * "RESTART BUTTON" action, "Restart Game" = **Validated**
+    * "MENU BUTTONS x2" action, "Back to Menu" = **Validated**
 
-### **4.2.3. functions**
-
-Functions tested:            
-
-*   Nav-Bar & Footer
-    * "SUBSCRIBE" all data fields submit correctly, confirmed by Coding Institute confirmation page = **Validated**
 
 ## **4.3. Build**
 
@@ -264,15 +252,11 @@ A lighthouse report was run for each page on the deployed github page, results b
 
 * **Menu Page**
 
-    <a href="https://imgur.com/oBc2qn0"><img src="https://i.imgur.com/oBc2qn0.png" title="source: imgur.com" /></a> 
+    <a href="https://imgur.com/qlyWdcQ"><img src="https://i.imgur.com/qlyWdcQ.png" title="source: imgur.com/EdgarasSp" /></a>
 
 * **Game Page Active**
 
-    <a href="https://imgur.com/giDnCfD"><img src="https://i.imgur.com/giDnCfD.png" title="source: imgur.com" /></a>
-
-* **Game Page not-Active**
-
-    <a href="https://imgur.com/Y2Wrrj4"><img src="https://i.imgur.com/Y2Wrrj4.png" title="source: imgur.com" /></a>
+    <a href="https://imgur.com/7IdodWm"><img src="https://i.imgur.com/7IdodWm.png" title="source: imgur.com/EdgarasSp" /></a>
 
 
 
@@ -284,24 +268,24 @@ A lighthouse report was run for each page on the deployed github page, results b
 
 There are 4 essential features to implement in the future:
 
-1. __Form Submission Confirmation__
-	* Create a visual confirmation that the contact forms have been sent to the baker. Either via a pop up or visual change to the "Submit" or "Send" button.
-2. __User Profile__
-	* To provide order history, order status and to store client details for fast track shopping experience.
-3. __Shopping Basket__
-	* To allow customers to add items and manage items in the basket. Also to show customers subtotal for the order.
-4. __Online Payment Option__
-	* To stream line the shopping experience and allow customer to pay for the order at the point of ordering rather than pay at the point of collection or delivery.
+1. __Leaderboard__
+	* Create a local leaderboard for the player to compete for the high score.
+2. __Multiplayer__
+	* create new game mode to allow 2 player to play either to guess same word one player using on screen keyboard and the other using on screen keyboard. In addition players could set a word for each other to guess.
+3. __Dynamics Word Generator__
+	* Generate words from online libraries.
+4. __Continue Game function__
+	* When player wins a game, give them option to continue the streak with score increasing further. To allow more competitive leaderboards.
 
 ## **5.2. Additional Features**
 
 There are 2 non-essential features to implement in the future:
 
-1. __Discounts__
-	* Develop a discount function within the site, including discount codes and discounts based on quantities ordered.
+1. __Random Word Generator__
+	* Player could generate a random letter to guess on behalf of them.
 
-2. __Direct Image Upload__
-	* Create an option to upload an example picture of a product within the special orders form.
+2. __Share Game Option__
+	* Implement lings to share the game with other players.
 
 # **6. Deployment**
 > ##### [Table of Content](#table-of-contents)
@@ -337,12 +321,11 @@ You will need to have a [GitHub ](https://github.com) account and it is advised 
 
 ## **7.1. Code**
 
-Website was created using code taught by Code Institute during first module, to help with some difficulties below sites were used:
+Website was created using code taught by Code Institute during second module, to help with some difficulties below sites were used:
 
 * __W3 Schools__ - To research both HTML, CS and JavaScript, key areas were javaScript loop examples. 
 
-* __Stack Overflow__ - To research answers to a queries to help me to understand the reasons behind the implementation and to help understand troubleshooting process.
-
+* __Stack Overflow__ - To research answers to a queries to help me to understand the javascript loops etc...
 
 # **8. Disclaimer**
 > ##### [Table of Content](#table-of-contents)
