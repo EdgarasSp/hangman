@@ -2,8 +2,8 @@
 
 document.addEventListener("DOMContentLoaded", function() {
   if (document.URL.includes("game.html")) {
-    generateButtons();  
-    generateLives ();
+    generateButtons();
+    generateLives();
     runGame();
   } else {
     return;
@@ -22,7 +22,7 @@ var score = 0;
 
 // Generates on screen lives TBC
 
-function generateLives () {
+function generateLives() {
   let livesHTML = lives.split('').map(number =>
     `
       <ul id="heart">
@@ -37,7 +37,7 @@ function generateLives () {
     `).join('');
 
     document.getElementById('lives-status').innerHTML = livesHTML;
-};
+}
 
 function generateButtons() {
    let buttonsHTML = 'abcdefghijklmnopqrstuvwxyz'.split('').map(letter =>
@@ -53,7 +53,7 @@ function generateButtons() {
     `).join('');
 
     document.getElementById('keyboard').innerHTML = buttonsHTML;
-};
+}
 
 function runGame (gameType){
   randomWord();
@@ -66,9 +66,9 @@ function runGame (gameType){
 
 // Generates random word based on variables and selected game type
 function randomWord() {
-  var easyWordsList = ["bleach","hacked","labels","belief","cream","guide","uncle","rural","sixth","wrong"]
-  var mediumWordsList = ["anxious","chicken","exclude","unknown","oblivion","yearbook","umbrella","tampered","readying","pedantic"]
-  var hardWordsList = ["chickenpox","friendship","quicksteps","backpacker","vaccinations","quarterbacks","taskmistress","pagination","jalapenos","waistband"]
+  var easyWordsList = ["bleach","hacked","labels","belief","cream","guide","uncle","rural","sixth","wrong"];
+  var mediumWordsList = ["anxious","chicken","exclude","unknown","oblivion","yearbook","umbrella","tampered","readying","pedantic"];
+  var hardWordsList = ["chickenpox","friendship","quicksteps","backpacker","vaccinations","quarterbacks","taskmistress","pagination","jalapenos","waistband"];
 
   if (gameType === "easy") {
       word = easyWordsList[Math.floor(Math.random() * easyWordsList.length)];
@@ -95,7 +95,7 @@ function checkGuess(chosenLetter) {
     checkGameEnd ();
   } else if (word.indexOf(chosenLetter) === -1) {
     mistakeCount++;
-    updateLives()
+    updateLives();
     incrementIncorrectScore();
     document.getElementById(chosenLetter).style.backgroundColor = '#ad8ba8';
     checkGameEnd ();
@@ -105,37 +105,37 @@ function checkGuess(chosenLetter) {
 function guess() {
   guessState = word.split('').map(letter => (guessed.indexOf(letter) >= 0 ? letter : " _ ")).join('');
   document.getElementById('word-random').innerHTML = guessState;
-};
+}
 
 // Update HTML info-bar
-function difficulty () {
+function difficulty() {
   document.getElementById('info-difficulty').innerHTML = gameType;
-};
+}
 
 
 let timeRemainingMed = 6;
 let timeRemainingHard = 4;
 
-function gameTimer (){
+function gameTimer() {
   let gameTime = document.getElementById('info-timer');
   if (gameType === "medium") {
-    timer = setInterval(function() {
+    let timer = setInterval(function() {
       timeRemainingMed -= 1;
       gameTime.innerHTML = timeRemainingMed;
-      checkGameEnd ();
+      checkGameEnd();
       if (timeRemainingMed === 0) {
         clearInterval(timer);        
       }
-    },1000)
+    },1000);
   } else if (gameType === "hard") {
-    timer = setInterval(function() {
+    let timer = setInterval(function() {
       timeRemainingHard -= 1;
       gameTime.innerHTML = timeRemainingHard;
-      checkGameEnd ();
+      checkGameEnd();
       if (timeRemainingHard === 0) {
         clearInterval(timer);        
       }
-    },1000)
+    },1000);
   } else {
       if (document.URL.includes("game.html")) {
         document.getElementById('timer').hidden = true;
@@ -148,7 +148,7 @@ function timerReset() {
   timeRemainingHard = 4;
 }
 
-function scoreReset () {
+function scoreReset() {
   document.getElementById("info-score").innerText = 0;
 }
 
@@ -181,7 +181,7 @@ function incrementIncorrectScore(){
   } else {
     document.getElementById("info-score").innerText = currentScore -=5;
   }
-};
+}
 
 // on mistake replace lives icon to hollow heart
 
@@ -192,7 +192,7 @@ function updateLives() {
   }
 }
 
-function checkGameEnd () {
+function checkGameEnd() {
   if (guessState === word) {
     document.getElementById('info-timer').innerHTML = "-";
     document.getElementById('keyboard').innerHTML =`
@@ -232,5 +232,5 @@ function checkGameEnd () {
 
     }
   }
-};
+}
 
